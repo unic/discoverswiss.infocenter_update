@@ -62,10 +62,10 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
 'is_accessible_for_free' => 'bool',
 'thumbnail_url' => 'string',
 'in_language' => 'string',
-'category' => '\InfocenterUpdate\Client\Model\DsSimplexRequest[]',
+'category' => 'string[]',
 'additional_type' => 'string',
 'alternate_name' => 'string',
-'tag' => '\InfocenterUpdate\Client\Model\DsSimplexRequest[]',
+'tag' => 'string[]',
 'link' => '\InfocenterUpdate\Client\Model\DsLinkRequest[]',
 'same_as' => 'string',
 'url' => 'string',
@@ -439,7 +439,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
     /**
      * Gets category
      *
-     * @return \InfocenterUpdate\Client\Model\DsSimplexRequest[]
+     * @return string[]
      */
     public function getCategory()
     {
@@ -449,7 +449,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
     /**
      * Sets category
      *
-     * @param \InfocenterUpdate\Client\Model\DsSimplexRequest[] $category category
+     * @param string[] $category category
      *
      * @return $this
      */
@@ -511,7 +511,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
     /**
      * Gets tag
      *
-     * @return \InfocenterUpdate\Client\Model\DsSimplexRequest[]
+     * @return string[]
      */
     public function getTag()
     {
@@ -521,7 +521,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
     /**
      * Sets tag
      *
-     * @param \InfocenterUpdate\Client\Model\DsSimplexRequest[] $tag tag
+     * @param string[] $tag tag
      *
      * @return $this
      */

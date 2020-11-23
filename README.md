@@ -195,7 +195,6 @@ Class | Method | HTTP request | Description
 
  - [DsCreativeWorkRequest](docs/Model/DsCreativeWorkRequest.md)
  - [DsLinkRequest](docs/Model/DsLinkRequest.md)
- - [DsSimplexRequest](docs/Model/DsSimplexRequest.md)
  - [DsStatusGet200TextPlainResponse](docs/Model/DsStatusGet200TextPlainResponse.md)
  - [DsStatusResponse](docs/Model/DsStatusResponse.md)
  - [DsUpdateResponse](docs/Model/DsUpdateResponse.md)

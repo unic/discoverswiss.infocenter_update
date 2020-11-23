@@ -56,7 +56,7 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'is_recomendation' => 'bool',
+        'is_recommendation' => 'bool',
 'type' => 'string',
 'url' => 'string',
 'title' => 'map[string,string]'    ];
@@ -67,7 +67,7 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'is_recomendation' => null,
+        'is_recommendation' => null,
 'type' => null,
 'url' => null,
 'title' => null    ];
@@ -99,7 +99,7 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_recomendation' => 'isRecomendation',
+        'is_recommendation' => 'isRecommendation',
 'type' => 'type',
 'url' => 'url',
 'title' => 'title'    ];
@@ -110,7 +110,7 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_recomendation' => 'setIsRecomendation',
+        'is_recommendation' => 'setIsRecommendation',
 'type' => 'setType',
 'url' => 'setUrl',
 'title' => 'setTitle'    ];
@@ -121,7 +121,7 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_recomendation' => 'getIsRecomendation',
+        'is_recommendation' => 'getIsRecommendation',
 'type' => 'getType',
 'url' => 'getUrl',
 'title' => 'getTitle'    ];
@@ -184,7 +184,7 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_recomendation'] = isset($data['is_recomendation']) ? $data['is_recomendation'] : null;
+        $this->container['is_recommendation'] = isset($data['is_recommendation']) ? $data['is_recommendation'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['title'] = isset($data['title']) ? $data['title'] : null;
@@ -215,25 +215,25 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets is_recomendation
+     * Gets is_recommendation
      *
      * @return bool
      */
-    public function getIsRecomendation()
+    public function getIsRecommendation()
     {
-        return $this->container['is_recomendation'];
+        return $this->container['is_recommendation'];
     }
 
     /**
-     * Sets is_recomendation
+     * Sets is_recommendation
      *
-     * @param bool $is_recomendation is_recomendation
+     * @param bool $is_recommendation is_recommendation
      *
      * @return $this
      */
-    public function setIsRecomendation($is_recomendation)
+    public function setIsRecommendation($is_recommendation)
     {
-        $this->container['is_recomendation'] = $is_recomendation;
+        $this->container['is_recommendation'] = $is_recommendation;
 
         return $this;
     }

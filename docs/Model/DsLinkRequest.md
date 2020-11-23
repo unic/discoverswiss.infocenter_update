@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_recomendation** | **bool** |  | [optional] 
+**is_recommendation** | **bool** |  | [optional] 
 **type** | **string** |  | [optional] 
 **url** | **string** |  | [optional] 
 **title** | **map[string,string]** |  | [optional] 
