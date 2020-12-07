@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**putUpsertCreativeWork**](DefaultApi.md#putupsertcreativework) | **PUT** /creativeWorks/{project} | PutUpsertCreativeWork
 
 # **deleteCreativeWork**
-> \InfocenterUpdate\Client\Model\DsUpdateResponse deleteCreativeWork($source_id, $project)
+> \InfocenterUpdate\Client\Model\DsUpdateResponse deleteCreativeWork($source_id, $project, $ocp_apim_subscription_key)
 
 DeleteCreativeWork
 
@@ -37,9 +37,10 @@ $apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
 );
 $source_id = "source_id_example"; // string | Use source id to delete creative works
 $project = "project_example"; // string | Use this property to specify project
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->deleteCreativeWork($source_id, $project);
+    $result = $apiInstance->deleteCreativeWork($source_id, $project, $ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteCreativeWork: ', $e->getMessage(), PHP_EOL;
@@ -53,6 +54,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **source_id** | **string**| Use source id to delete creative works |
  **project** | **string**| Use this property to specify project |
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
 
 ### Return type
 
@@ -70,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getStatus**
-> \InfocenterUpdate\Client\Model\DsStatusGet200TextPlainResponse getStatus()
+> \InfocenterUpdate\Client\Model\DsStatusGet200TextPlainResponse getStatus($ocp_apim_subscription_key)
 
 GetStatus
 
@@ -94,9 +96,10 @@ $apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->getStatus();
+    $result = $apiInstance->getStatus($ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStatus: ', $e->getMessage(), PHP_EOL;
@@ -105,7 +108,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
 
 ### Return type
 
@@ -123,7 +129,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getStatusAbout**
-> \InfocenterUpdate\Client\Model\DsStatusResponse getStatusAbout()
+> \InfocenterUpdate\Client\Model\DsStatusResponse getStatusAbout($ocp_apim_subscription_key)
 
 GetStatusAbout
 
@@ -147,9 +153,10 @@ $apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->getStatusAbout();
+    $result = $apiInstance->getStatusAbout($ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStatusAbout: ', $e->getMessage(), PHP_EOL;
@@ -158,7 +165,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
 
 ### Return type
 
@@ -176,7 +186,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **postUpsertCreativeWork**
-> \InfocenterUpdate\Client\Model\DsUpdateResponse postUpsertCreativeWork($project, $body)
+> \InfocenterUpdate\Client\Model\DsUpdateResponse postUpsertCreativeWork($project, $body, $ocp_apim_subscription_key)
 
 PostUpsertCreativeWork
 
@@ -202,9 +212,10 @@ $apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
 );
 $project = "project_example"; // string | Use this property to specify project
 $body = new \InfocenterUpdate\Client\Model\DsCreativeWorkRequest(); // \InfocenterUpdate\Client\Model\DsCreativeWorkRequest | 
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->postUpsertCreativeWork($project, $body);
+    $result = $apiInstance->postUpsertCreativeWork($project, $body, $ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postUpsertCreativeWork: ', $e->getMessage(), PHP_EOL;
@@ -218,6 +229,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project** | **string**| Use this property to specify project |
  **body** | [**\InfocenterUpdate\Client\Model\DsCreativeWorkRequest**](../Model/DsCreativeWorkRequest.md)|  | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
 
 ### Return type
 
@@ -235,7 +247,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **putUpsertCreativeWork**
-> \InfocenterUpdate\Client\Model\DsUpdateResponse putUpsertCreativeWork($project, $body)
+> \InfocenterUpdate\Client\Model\DsUpdateResponse putUpsertCreativeWork($project, $body, $ocp_apim_subscription_key)
 
 PutUpsertCreativeWork
 
@@ -261,9 +273,10 @@ $apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
 );
 $project = "project_example"; // string | Use this property to specify project
 $body = new \InfocenterUpdate\Client\Model\DsCreativeWorkRequest(); // \InfocenterUpdate\Client\Model\DsCreativeWorkRequest | 
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->putUpsertCreativeWork($project, $body);
+    $result = $apiInstance->putUpsertCreativeWork($project, $body, $ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->putUpsertCreativeWork: ', $e->getMessage(), PHP_EOL;
@@ -277,6 +290,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project** | **string**| Use this property to specify project |
  **body** | [**\InfocenterUpdate\Client\Model\DsCreativeWorkRequest**](../Model/DsCreativeWorkRequest.md)|  | [optional]
+ **ocp_apim_subscription_key** | **string**| Subscription key to access the api. Get it on developer.discover.swiss. | [optional]
 
 ### Return type
 

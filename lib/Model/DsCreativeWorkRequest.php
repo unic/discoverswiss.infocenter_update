@@ -57,7 +57,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'content_reference_time' => '\DateTime',
-'copyright_year' => 'double',
+'copyright_year' => 'int',
 'encoding_format' => 'string',
 'is_accessible_for_free' => 'bool',
 'thumbnail_url' => 'string',
@@ -72,6 +72,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
 'description' => 'map[string,string]',
 'disambiguating_description' => 'map[string,string]',
 'name' => 'map[string,string]',
+'contained_in_place' => 'string[]',
 'source_id' => 'string'    ];
 
     /**
@@ -81,7 +82,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'content_reference_time' => 'date-time',
-'copyright_year' => 'double',
+'copyright_year' => 'int32',
 'encoding_format' => null,
 'is_accessible_for_free' => null,
 'thumbnail_url' => null,
@@ -96,6 +97,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
 'description' => null,
 'disambiguating_description' => null,
 'name' => null,
+'contained_in_place' => null,
 'source_id' => null    ];
 
     /**
@@ -141,6 +143,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
 'description' => 'description',
 'disambiguating_description' => 'disambiguatingDescription',
 'name' => 'name',
+'contained_in_place' => 'containedInPlace',
 'source_id' => 'sourceId'    ];
 
     /**
@@ -165,6 +168,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
 'description' => 'setDescription',
 'disambiguating_description' => 'setDisambiguatingDescription',
 'name' => 'setName',
+'contained_in_place' => 'setContainedInPlace',
 'source_id' => 'setSourceId'    ];
 
     /**
@@ -189,6 +193,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
 'description' => 'getDescription',
 'disambiguating_description' => 'getDisambiguatingDescription',
 'name' => 'getName',
+'contained_in_place' => 'getContainedInPlace',
 'source_id' => 'getSourceId'    ];
 
     /**
@@ -265,6 +270,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['disambiguating_description'] = isset($data['disambiguating_description']) ? $data['disambiguating_description'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
         $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
     }
 
@@ -319,7 +325,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
     /**
      * Gets copyright_year
      *
-     * @return double
+     * @return int
      */
     public function getCopyrightYear()
     {
@@ -329,7 +335,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
     /**
      * Sets copyright_year
      *
-     * @param double $copyright_year copyright_year
+     * @param int $copyright_year copyright_year
      *
      * @return $this
      */
@@ -672,6 +678,30 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets contained_in_place
+     *
+     * @return string[]
+     */
+    public function getContainedInPlace()
+    {
+        return $this->container['contained_in_place'];
+    }
+
+    /**
+     * Sets contained_in_place
+     *
+     * @param string[] $contained_in_place contained_in_place
+     *
+     * @return $this
+     */
+    public function setContainedInPlace($contained_in_place)
+    {
+        $this->container['contained_in_place'] = $contained_in_place;
 
         return $this;
     }

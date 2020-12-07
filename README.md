@@ -73,9 +73,10 @@ $apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
 );
 $source_id = "source_id_example"; // string | Use source id to delete creative works
 $project = "project_example"; // string | Use this property to specify project
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->deleteCreativeWork($source_id, $project);
+    $result = $apiInstance->deleteCreativeWork($source_id, $project, $ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->deleteCreativeWork: ', $e->getMessage(), PHP_EOL;
@@ -96,9 +97,10 @@ $apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->getStatus();
+    $result = $apiInstance->getStatus($ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStatus: ', $e->getMessage(), PHP_EOL;
@@ -119,9 +121,10 @@ $apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->getStatusAbout();
+    $result = $apiInstance->getStatusAbout($ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->getStatusAbout: ', $e->getMessage(), PHP_EOL;
@@ -144,9 +147,10 @@ $apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
 );
 $project = "project_example"; // string | Use this property to specify project
 $body = new \InfocenterUpdate\Client\Model\DsCreativeWorkRequest(); // \InfocenterUpdate\Client\Model\DsCreativeWorkRequest | 
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->postUpsertCreativeWork($project, $body);
+    $result = $apiInstance->postUpsertCreativeWork($project, $body, $ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->postUpsertCreativeWork: ', $e->getMessage(), PHP_EOL;
@@ -169,9 +173,10 @@ $apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
 );
 $project = "project_example"; // string | Use this property to specify project
 $body = new \InfocenterUpdate\Client\Model\DsCreativeWorkRequest(); // \InfocenterUpdate\Client\Model\DsCreativeWorkRequest | 
+$ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the api. Get it on developer.discover.swiss.
 
 try {
-    $result = $apiInstance->putUpsertCreativeWork($project, $body);
+    $result = $apiInstance->putUpsertCreativeWork($project, $body, $ocp_apim_subscription_key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->putUpsertCreativeWork: ', $e->getMessage(), PHP_EOL;

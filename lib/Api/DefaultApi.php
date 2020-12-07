@@ -93,14 +93,15 @@ class DefaultApi
      *
      * @param  string $source_id Use source id to delete creative works (required)
      * @param  string $project Use this property to specify project (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InfocenterUpdate\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \InfocenterUpdate\Client\Model\DsUpdateResponse
      */
-    public function deleteCreativeWork($source_id, $project)
+    public function deleteCreativeWork($source_id, $project, $ocp_apim_subscription_key = null)
     {
-        list($response) = $this->deleteCreativeWorkWithHttpInfo($source_id, $project);
+        list($response) = $this->deleteCreativeWorkWithHttpInfo($source_id, $project, $ocp_apim_subscription_key);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class DefaultApi
      *
      * @param  string $source_id Use source id to delete creative works (required)
      * @param  string $project Use this property to specify project (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InfocenterUpdate\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \InfocenterUpdate\Client\Model\DsUpdateResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteCreativeWorkWithHttpInfo($source_id, $project)
+    public function deleteCreativeWorkWithHttpInfo($source_id, $project, $ocp_apim_subscription_key = null)
     {
         $returnType = '\InfocenterUpdate\Client\Model\DsUpdateResponse';
-        $request = $this->deleteCreativeWorkRequest($source_id, $project);
+        $request = $this->deleteCreativeWorkRequest($source_id, $project, $ocp_apim_subscription_key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,13 +189,14 @@ class DefaultApi
      *
      * @param  string $source_id Use source id to delete creative works (required)
      * @param  string $project Use this property to specify project (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCreativeWorkAsync($source_id, $project)
+    public function deleteCreativeWorkAsync($source_id, $project, $ocp_apim_subscription_key = null)
     {
-        return $this->deleteCreativeWorkAsyncWithHttpInfo($source_id, $project)
+        return $this->deleteCreativeWorkAsyncWithHttpInfo($source_id, $project, $ocp_apim_subscription_key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -208,14 +211,15 @@ class DefaultApi
      *
      * @param  string $source_id Use source id to delete creative works (required)
      * @param  string $project Use this property to specify project (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCreativeWorkAsyncWithHttpInfo($source_id, $project)
+    public function deleteCreativeWorkAsyncWithHttpInfo($source_id, $project, $ocp_apim_subscription_key = null)
     {
         $returnType = '\InfocenterUpdate\Client\Model\DsUpdateResponse';
-        $request = $this->deleteCreativeWorkRequest($source_id, $project);
+        $request = $this->deleteCreativeWorkRequest($source_id, $project, $ocp_apim_subscription_key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -259,11 +263,12 @@ class DefaultApi
      *
      * @param  string $source_id Use source id to delete creative works (required)
      * @param  string $project Use this property to specify project (required)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteCreativeWorkRequest($source_id, $project)
+    protected function deleteCreativeWorkRequest($source_id, $project, $ocp_apim_subscription_key = null)
     {
         // verify the required parameter 'source_id' is set
         if ($source_id === null || (is_array($source_id) && count($source_id) === 0)) {
@@ -285,6 +290,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
 
         // path params
         if ($source_id !== null) {
@@ -382,14 +391,15 @@ class DefaultApi
      *
      * GetStatus
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InfocenterUpdate\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \InfocenterUpdate\Client\Model\DsStatusGet200TextPlainResponse
      */
-    public function getStatus()
+    public function getStatus($ocp_apim_subscription_key = null)
     {
-        list($response) = $this->getStatusWithHttpInfo();
+        list($response) = $this->getStatusWithHttpInfo($ocp_apim_subscription_key);
         return $response;
     }
 
@@ -398,15 +408,16 @@ class DefaultApi
      *
      * GetStatus
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InfocenterUpdate\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \InfocenterUpdate\Client\Model\DsStatusGet200TextPlainResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStatusWithHttpInfo()
+    public function getStatusWithHttpInfo($ocp_apim_subscription_key = null)
     {
         $returnType = '\InfocenterUpdate\Client\Model\DsStatusGet200TextPlainResponse';
-        $request = $this->getStatusRequest();
+        $request = $this->getStatusRequest($ocp_apim_subscription_key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -472,13 +483,14 @@ class DefaultApi
      *
      * GetStatus
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStatusAsync()
+    public function getStatusAsync($ocp_apim_subscription_key = null)
     {
-        return $this->getStatusAsyncWithHttpInfo()
+        return $this->getStatusAsyncWithHttpInfo($ocp_apim_subscription_key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -491,14 +503,15 @@ class DefaultApi
      *
      * GetStatus
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStatusAsyncWithHttpInfo()
+    public function getStatusAsyncWithHttpInfo($ocp_apim_subscription_key = null)
     {
         $returnType = '\InfocenterUpdate\Client\Model\DsStatusGet200TextPlainResponse';
-        $request = $this->getStatusRequest();
+        $request = $this->getStatusRequest($ocp_apim_subscription_key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -540,11 +553,12 @@ class DefaultApi
     /**
      * Create request for operation 'getStatus'
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getStatusRequest()
+    protected function getStatusRequest($ocp_apim_subscription_key = null)
     {
 
         $resourcePath = '/status';
@@ -554,6 +568,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
 
 
         // body params
@@ -635,14 +653,15 @@ class DefaultApi
      *
      * GetStatusAbout
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InfocenterUpdate\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \InfocenterUpdate\Client\Model\DsStatusResponse
      */
-    public function getStatusAbout()
+    public function getStatusAbout($ocp_apim_subscription_key = null)
     {
-        list($response) = $this->getStatusAboutWithHttpInfo();
+        list($response) = $this->getStatusAboutWithHttpInfo($ocp_apim_subscription_key);
         return $response;
     }
 
@@ -651,15 +670,16 @@ class DefaultApi
      *
      * GetStatusAbout
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InfocenterUpdate\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \InfocenterUpdate\Client\Model\DsStatusResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getStatusAboutWithHttpInfo()
+    public function getStatusAboutWithHttpInfo($ocp_apim_subscription_key = null)
     {
         $returnType = '\InfocenterUpdate\Client\Model\DsStatusResponse';
-        $request = $this->getStatusAboutRequest();
+        $request = $this->getStatusAboutRequest($ocp_apim_subscription_key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -725,13 +745,14 @@ class DefaultApi
      *
      * GetStatusAbout
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStatusAboutAsync()
+    public function getStatusAboutAsync($ocp_apim_subscription_key = null)
     {
-        return $this->getStatusAboutAsyncWithHttpInfo()
+        return $this->getStatusAboutAsyncWithHttpInfo($ocp_apim_subscription_key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -744,14 +765,15 @@ class DefaultApi
      *
      * GetStatusAbout
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getStatusAboutAsyncWithHttpInfo()
+    public function getStatusAboutAsyncWithHttpInfo($ocp_apim_subscription_key = null)
     {
         $returnType = '\InfocenterUpdate\Client\Model\DsStatusResponse';
-        $request = $this->getStatusAboutRequest();
+        $request = $this->getStatusAboutRequest($ocp_apim_subscription_key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -793,11 +815,12 @@ class DefaultApi
     /**
      * Create request for operation 'getStatusAbout'
      *
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getStatusAboutRequest()
+    protected function getStatusAboutRequest($ocp_apim_subscription_key = null)
     {
 
         $resourcePath = '/status/about';
@@ -807,6 +830,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
 
 
         // body params
@@ -890,14 +917,15 @@ class DefaultApi
      *
      * @param  string $project Use this property to specify project (required)
      * @param  \InfocenterUpdate\Client\Model\DsCreativeWorkRequest $body body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InfocenterUpdate\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \InfocenterUpdate\Client\Model\DsUpdateResponse
      */
-    public function postUpsertCreativeWork($project, $body = null)
+    public function postUpsertCreativeWork($project, $body = null, $ocp_apim_subscription_key = null)
     {
-        list($response) = $this->postUpsertCreativeWorkWithHttpInfo($project, $body);
+        list($response) = $this->postUpsertCreativeWorkWithHttpInfo($project, $body, $ocp_apim_subscription_key);
         return $response;
     }
 
@@ -908,15 +936,16 @@ class DefaultApi
      *
      * @param  string $project Use this property to specify project (required)
      * @param  \InfocenterUpdate\Client\Model\DsCreativeWorkRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InfocenterUpdate\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \InfocenterUpdate\Client\Model\DsUpdateResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function postUpsertCreativeWorkWithHttpInfo($project, $body = null)
+    public function postUpsertCreativeWorkWithHttpInfo($project, $body = null, $ocp_apim_subscription_key = null)
     {
         $returnType = '\InfocenterUpdate\Client\Model\DsUpdateResponse';
-        $request = $this->postUpsertCreativeWorkRequest($project, $body);
+        $request = $this->postUpsertCreativeWorkRequest($project, $body, $ocp_apim_subscription_key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -984,13 +1013,14 @@ class DefaultApi
      *
      * @param  string $project Use this property to specify project (required)
      * @param  \InfocenterUpdate\Client\Model\DsCreativeWorkRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUpsertCreativeWorkAsync($project, $body = null)
+    public function postUpsertCreativeWorkAsync($project, $body = null, $ocp_apim_subscription_key = null)
     {
-        return $this->postUpsertCreativeWorkAsyncWithHttpInfo($project, $body)
+        return $this->postUpsertCreativeWorkAsyncWithHttpInfo($project, $body, $ocp_apim_subscription_key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1005,14 +1035,15 @@ class DefaultApi
      *
      * @param  string $project Use this property to specify project (required)
      * @param  \InfocenterUpdate\Client\Model\DsCreativeWorkRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function postUpsertCreativeWorkAsyncWithHttpInfo($project, $body = null)
+    public function postUpsertCreativeWorkAsyncWithHttpInfo($project, $body = null, $ocp_apim_subscription_key = null)
     {
         $returnType = '\InfocenterUpdate\Client\Model\DsUpdateResponse';
-        $request = $this->postUpsertCreativeWorkRequest($project, $body);
+        $request = $this->postUpsertCreativeWorkRequest($project, $body, $ocp_apim_subscription_key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1056,11 +1087,12 @@ class DefaultApi
      *
      * @param  string $project Use this property to specify project (required)
      * @param  \InfocenterUpdate\Client\Model\DsCreativeWorkRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function postUpsertCreativeWorkRequest($project, $body = null)
+    protected function postUpsertCreativeWorkRequest($project, $body = null, $ocp_apim_subscription_key = null)
     {
         // verify the required parameter 'project' is set
         if ($project === null || (is_array($project) && count($project) === 0)) {
@@ -1076,6 +1108,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
 
         // path params
         if ($project !== null) {
@@ -1170,14 +1206,15 @@ class DefaultApi
      *
      * @param  string $project Use this property to specify project (required)
      * @param  \InfocenterUpdate\Client\Model\DsCreativeWorkRequest $body body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InfocenterUpdate\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \InfocenterUpdate\Client\Model\DsUpdateResponse
      */
-    public function putUpsertCreativeWork($project, $body = null)
+    public function putUpsertCreativeWork($project, $body = null, $ocp_apim_subscription_key = null)
     {
-        list($response) = $this->putUpsertCreativeWorkWithHttpInfo($project, $body);
+        list($response) = $this->putUpsertCreativeWorkWithHttpInfo($project, $body, $ocp_apim_subscription_key);
         return $response;
     }
 
@@ -1188,15 +1225,16 @@ class DefaultApi
      *
      * @param  string $project Use this property to specify project (required)
      * @param  \InfocenterUpdate\Client\Model\DsCreativeWorkRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InfocenterUpdate\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \InfocenterUpdate\Client\Model\DsUpdateResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putUpsertCreativeWorkWithHttpInfo($project, $body = null)
+    public function putUpsertCreativeWorkWithHttpInfo($project, $body = null, $ocp_apim_subscription_key = null)
     {
         $returnType = '\InfocenterUpdate\Client\Model\DsUpdateResponse';
-        $request = $this->putUpsertCreativeWorkRequest($project, $body);
+        $request = $this->putUpsertCreativeWorkRequest($project, $body, $ocp_apim_subscription_key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1264,13 +1302,14 @@ class DefaultApi
      *
      * @param  string $project Use this property to specify project (required)
      * @param  \InfocenterUpdate\Client\Model\DsCreativeWorkRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putUpsertCreativeWorkAsync($project, $body = null)
+    public function putUpsertCreativeWorkAsync($project, $body = null, $ocp_apim_subscription_key = null)
     {
-        return $this->putUpsertCreativeWorkAsyncWithHttpInfo($project, $body)
+        return $this->putUpsertCreativeWorkAsyncWithHttpInfo($project, $body, $ocp_apim_subscription_key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1285,14 +1324,15 @@ class DefaultApi
      *
      * @param  string $project Use this property to specify project (required)
      * @param  \InfocenterUpdate\Client\Model\DsCreativeWorkRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putUpsertCreativeWorkAsyncWithHttpInfo($project, $body = null)
+    public function putUpsertCreativeWorkAsyncWithHttpInfo($project, $body = null, $ocp_apim_subscription_key = null)
     {
         $returnType = '\InfocenterUpdate\Client\Model\DsUpdateResponse';
-        $request = $this->putUpsertCreativeWorkRequest($project, $body);
+        $request = $this->putUpsertCreativeWorkRequest($project, $body, $ocp_apim_subscription_key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1336,11 +1376,12 @@ class DefaultApi
      *
      * @param  string $project Use this property to specify project (required)
      * @param  \InfocenterUpdate\Client\Model\DsCreativeWorkRequest $body (optional)
+     * @param  string $ocp_apim_subscription_key Subscription key to access the api. Get it on developer.discover.swiss. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function putUpsertCreativeWorkRequest($project, $body = null)
+    protected function putUpsertCreativeWorkRequest($project, $body = null, $ocp_apim_subscription_key = null)
     {
         // verify the required parameter 'project' is set
         if ($project === null || (is_array($project) && count($project) === 0)) {
@@ -1356,6 +1397,10 @@ class DefaultApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($ocp_apim_subscription_key !== null) {
+            $headerParams['Ocp-Apim-Subscription-Key'] = ObjectSerializer::toHeaderValue($ocp_apim_subscription_key);
+        }
 
         // path params
         if ($project !== null) {
