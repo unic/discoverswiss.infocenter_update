@@ -1,6 +1,6 @@
 <?php
 /**
- * DsLinkRequest
+ * DsTourSeasonRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InfocenterUpdate\Client\ObjectSerializer;
 
 /**
- * DsLinkRequest Class Doc Comment
+ * DsTourSeasonRequest Class Doc Comment
  *
  * @category Class
  * @package  InfocenterUpdate\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsLinkRequest implements ModelInterface, ArrayAccess
+class DsTourSeasonRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LinkRequest';
+    protected static $swaggerModelName = 'TourSeasonRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,18 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'is_recommendation' => 'bool',
-'type' => 'string',
-'url' => 'string',
-'in_language' => 'string',
-'title' => 'map[string,string]'    ];
+        'jan' => 'bool',
+'feb' => 'bool',
+'mar' => 'bool',
+'apr' => 'bool',
+'may' => 'bool',
+'jun' => 'bool',
+'jul' => 'bool',
+'aug' => 'bool',
+'sep' => 'bool',
+'oct' => 'bool',
+'nov' => 'bool',
+'dec' => 'bool'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +75,18 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'is_recommendation' => null,
-'type' => null,
-'url' => null,
-'in_language' => null,
-'title' => null    ];
+        'jan' => null,
+'feb' => null,
+'mar' => null,
+'apr' => null,
+'may' => null,
+'jun' => null,
+'jul' => null,
+'aug' => null,
+'sep' => null,
+'oct' => null,
+'nov' => null,
+'dec' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +115,18 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_recommendation' => 'isRecommendation',
-'type' => 'type',
-'url' => 'url',
-'in_language' => 'inLanguage',
-'title' => 'title'    ];
+        'jan' => 'jan',
+'feb' => 'feb',
+'mar' => 'mar',
+'apr' => 'apr',
+'may' => 'may',
+'jun' => 'jun',
+'jul' => 'jul',
+'aug' => 'aug',
+'sep' => 'sep',
+'oct' => 'oct',
+'nov' => 'nov',
+'dec' => 'dec'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +134,18 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_recommendation' => 'setIsRecommendation',
-'type' => 'setType',
-'url' => 'setUrl',
-'in_language' => 'setInLanguage',
-'title' => 'setTitle'    ];
+        'jan' => 'setJan',
+'feb' => 'setFeb',
+'mar' => 'setMar',
+'apr' => 'setApr',
+'may' => 'setMay',
+'jun' => 'setJun',
+'jul' => 'setJul',
+'aug' => 'setAug',
+'sep' => 'setSep',
+'oct' => 'setOct',
+'nov' => 'setNov',
+'dec' => 'setDec'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +153,18 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_recommendation' => 'getIsRecommendation',
-'type' => 'getType',
-'url' => 'getUrl',
-'in_language' => 'getInLanguage',
-'title' => 'getTitle'    ];
+        'jan' => 'getJan',
+'feb' => 'getFeb',
+'mar' => 'getMar',
+'apr' => 'getApr',
+'may' => 'getMay',
+'jun' => 'getJun',
+'jul' => 'getJul',
+'aug' => 'getAug',
+'sep' => 'getSep',
+'oct' => 'getOct',
+'nov' => 'getNov',
+'dec' => 'getDec'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +224,18 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_recommendation'] = isset($data['is_recommendation']) ? $data['is_recommendation'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['jan'] = isset($data['jan']) ? $data['jan'] : null;
+        $this->container['feb'] = isset($data['feb']) ? $data['feb'] : null;
+        $this->container['mar'] = isset($data['mar']) ? $data['mar'] : null;
+        $this->container['apr'] = isset($data['apr']) ? $data['apr'] : null;
+        $this->container['may'] = isset($data['may']) ? $data['may'] : null;
+        $this->container['jun'] = isset($data['jun']) ? $data['jun'] : null;
+        $this->container['jul'] = isset($data['jul']) ? $data['jul'] : null;
+        $this->container['aug'] = isset($data['aug']) ? $data['aug'] : null;
+        $this->container['sep'] = isset($data['sep']) ? $data['sep'] : null;
+        $this->container['oct'] = isset($data['oct']) ? $data['oct'] : null;
+        $this->container['nov'] = isset($data['nov']) ? $data['nov'] : null;
+        $this->container['dec'] = isset($data['dec']) ? $data['dec'] : null;
     }
 
     /**
@@ -221,121 +263,289 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets is_recommendation
+     * Gets jan
      *
      * @return bool
      */
-    public function getIsRecommendation()
+    public function getJan()
     {
-        return $this->container['is_recommendation'];
+        return $this->container['jan'];
     }
 
     /**
-     * Sets is_recommendation
+     * Sets jan
      *
-     * @param bool $is_recommendation is_recommendation
+     * @param bool $jan jan
      *
      * @return $this
      */
-    public function setIsRecommendation($is_recommendation)
+    public function setJan($jan)
     {
-        $this->container['is_recommendation'] = $is_recommendation;
+        $this->container['jan'] = $jan;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets feb
      *
-     * @return string
+     * @return bool
      */
-    public function getType()
+    public function getFeb()
     {
-        return $this->container['type'];
+        return $this->container['feb'];
     }
 
     /**
-     * Sets type
+     * Sets feb
      *
-     * @param string $type type
+     * @param bool $feb feb
      *
      * @return $this
      */
-    public function setType($type)
+    public function setFeb($feb)
     {
-        $this->container['type'] = $type;
+        $this->container['feb'] = $feb;
 
         return $this;
     }
 
     /**
-     * Gets url
+     * Gets mar
      *
-     * @return string
+     * @return bool
      */
-    public function getUrl()
+    public function getMar()
     {
-        return $this->container['url'];
+        return $this->container['mar'];
     }
 
     /**
-     * Sets url
+     * Sets mar
      *
-     * @param string $url url
+     * @param bool $mar mar
      *
      * @return $this
      */
-    public function setUrl($url)
+    public function setMar($mar)
     {
-        $this->container['url'] = $url;
+        $this->container['mar'] = $mar;
 
         return $this;
     }
 
     /**
-     * Gets in_language
+     * Gets apr
      *
-     * @return string
+     * @return bool
      */
-    public function getInLanguage()
+    public function getApr()
     {
-        return $this->container['in_language'];
+        return $this->container['apr'];
     }
 
     /**
-     * Sets in_language
+     * Sets apr
      *
-     * @param string $in_language in_language
+     * @param bool $apr apr
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setApr($apr)
     {
-        $this->container['in_language'] = $in_language;
+        $this->container['apr'] = $apr;
 
         return $this;
     }
 
     /**
-     * Gets title
+     * Gets may
      *
-     * @return map[string,string]
+     * @return bool
      */
-    public function getTitle()
+    public function getMay()
     {
-        return $this->container['title'];
+        return $this->container['may'];
     }
 
     /**
-     * Sets title
+     * Sets may
      *
-     * @param map[string,string] $title title
+     * @param bool $may may
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setMay($may)
     {
-        $this->container['title'] = $title;
+        $this->container['may'] = $may;
+
+        return $this;
+    }
+
+    /**
+     * Gets jun
+     *
+     * @return bool
+     */
+    public function getJun()
+    {
+        return $this->container['jun'];
+    }
+
+    /**
+     * Sets jun
+     *
+     * @param bool $jun jun
+     *
+     * @return $this
+     */
+    public function setJun($jun)
+    {
+        $this->container['jun'] = $jun;
+
+        return $this;
+    }
+
+    /**
+     * Gets jul
+     *
+     * @return bool
+     */
+    public function getJul()
+    {
+        return $this->container['jul'];
+    }
+
+    /**
+     * Sets jul
+     *
+     * @param bool $jul jul
+     *
+     * @return $this
+     */
+    public function setJul($jul)
+    {
+        $this->container['jul'] = $jul;
+
+        return $this;
+    }
+
+    /**
+     * Gets aug
+     *
+     * @return bool
+     */
+    public function getAug()
+    {
+        return $this->container['aug'];
+    }
+
+    /**
+     * Sets aug
+     *
+     * @param bool $aug aug
+     *
+     * @return $this
+     */
+    public function setAug($aug)
+    {
+        $this->container['aug'] = $aug;
+
+        return $this;
+    }
+
+    /**
+     * Gets sep
+     *
+     * @return bool
+     */
+    public function getSep()
+    {
+        return $this->container['sep'];
+    }
+
+    /**
+     * Sets sep
+     *
+     * @param bool $sep sep
+     *
+     * @return $this
+     */
+    public function setSep($sep)
+    {
+        $this->container['sep'] = $sep;
+
+        return $this;
+    }
+
+    /**
+     * Gets oct
+     *
+     * @return bool
+     */
+    public function getOct()
+    {
+        return $this->container['oct'];
+    }
+
+    /**
+     * Sets oct
+     *
+     * @param bool $oct oct
+     *
+     * @return $this
+     */
+    public function setOct($oct)
+    {
+        $this->container['oct'] = $oct;
+
+        return $this;
+    }
+
+    /**
+     * Gets nov
+     *
+     * @return bool
+     */
+    public function getNov()
+    {
+        return $this->container['nov'];
+    }
+
+    /**
+     * Sets nov
+     *
+     * @param bool $nov nov
+     *
+     * @return $this
+     */
+    public function setNov($nov)
+    {
+        $this->container['nov'] = $nov;
+
+        return $this;
+    }
+
+    /**
+     * Gets dec
+     *
+     * @return bool
+     */
+    public function getDec()
+    {
+        return $this->container['dec'];
+    }
+
+    /**
+     * Sets dec
+     *
+     * @param bool $dec dec
+     *
+     * @return $this
+     */
+    public function setDec($dec)
+    {
+        $this->container['dec'] = $dec;
 
         return $this;
     }

@@ -1,20 +1,21 @@
-# DsCreativeWorkRequest
+# DsPostalAddressRequest
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content_reference_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**copyright_year** | **int** |  | [optional] 
-**encoding_format** | **string** |  | [optional] 
-**is_accessible_for_free** | **bool** |  | [optional] 
-**thumbnail_url** | **string** |  | [optional] 
-**in_language** | **string** |  | [optional] 
-**category** | **string[]** |  | [optional] 
-**tag** | **string[]** |  | [optional] 
-**contained_in_place** | **string[]** |  | [optional] 
-**source_id** | **string** |  | [optional] 
-**auto_translate** | **bool** |  | [optional] 
-**data_governance** | [**\InfocenterUpdate\Client\Model\DsDataGovernanceRequest**](DsDataGovernanceRequest.md) |  | [optional] 
+**address_country** | **string** |  | [optional] 
+**address_locality** | **string** |  | [optional] 
+**address_region** | **string** |  | [optional] 
+**postal_code** | **string** |  | [optional] 
+**post_office_box_number** | **string** |  | [optional] 
+**street_address** | **string** |  | [optional] 
+**address_line** | **string** |  | [optional] 
+**available_language** | **string[]** |  | [optional] 
+**contact_type** | **string** |  | [optional] 
+**email** | **string** |  | [optional] 
+**fax_number** | **string** |  | [optional] 
+**telephone** | **string** |  | [optional] 
+**hours_available** | [**\InfocenterUpdate\Client\Model\DsOpeningHoursSpecificationRequest[]**](DsOpeningHoursSpecificationRequest.md) |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **link** | [**\InfocenterUpdate\Client\Model\DsLinkRequest[]**](DsLinkRequest.md) |  | [optional] 

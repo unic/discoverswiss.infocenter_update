@@ -1,8 +1,10 @@
-# DsCreativeWorkRequest
+# DsImageObjectRequest
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**caption** | **map[string,string]** |  | [optional] 
+**content_url** | **string** |  | [optional] 
 **content_reference_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **copyright_year** | **int** |  | [optional] 
 **encoding_format** | **string** |  | [optional] 

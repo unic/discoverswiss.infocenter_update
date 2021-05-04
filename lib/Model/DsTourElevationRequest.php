@@ -1,6 +1,6 @@
 <?php
 /**
- * DsLinkRequest
+ * DsTourElevationRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InfocenterUpdate\Client\ObjectSerializer;
 
 /**
- * DsLinkRequest Class Doc Comment
+ * DsTourElevationRequest Class Doc Comment
  *
  * @category Class
  * @package  InfocenterUpdate\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsLinkRequest implements ModelInterface, ArrayAccess
+class DsTourElevationRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LinkRequest';
+    protected static $swaggerModelName = 'TourElevationRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'is_recommendation' => 'bool',
-'type' => 'string',
-'url' => 'string',
-'in_language' => 'string',
-'title' => 'map[string,string]'    ];
+        'ascent' => 'int',
+'descent' => 'int',
+'min_altitude' => 'int',
+'max_altitude' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +67,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'is_recommendation' => null,
-'type' => null,
-'url' => null,
-'in_language' => null,
-'title' => null    ];
+        'ascent' => 'int32',
+'descent' => 'int32',
+'min_altitude' => 'int32',
+'max_altitude' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +99,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_recommendation' => 'isRecommendation',
-'type' => 'type',
-'url' => 'url',
-'in_language' => 'inLanguage',
-'title' => 'title'    ];
+        'ascent' => 'ascent',
+'descent' => 'descent',
+'min_altitude' => 'minAltitude',
+'max_altitude' => 'maxAltitude'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +110,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_recommendation' => 'setIsRecommendation',
-'type' => 'setType',
-'url' => 'setUrl',
-'in_language' => 'setInLanguage',
-'title' => 'setTitle'    ];
+        'ascent' => 'setAscent',
+'descent' => 'setDescent',
+'min_altitude' => 'setMinAltitude',
+'max_altitude' => 'setMaxAltitude'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +121,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_recommendation' => 'getIsRecommendation',
-'type' => 'getType',
-'url' => 'getUrl',
-'in_language' => 'getInLanguage',
-'title' => 'getTitle'    ];
+        'ascent' => 'getAscent',
+'descent' => 'getDescent',
+'min_altitude' => 'getMinAltitude',
+'max_altitude' => 'getMaxAltitude'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +184,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_recommendation'] = isset($data['is_recommendation']) ? $data['is_recommendation'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['ascent'] = isset($data['ascent']) ? $data['ascent'] : null;
+        $this->container['descent'] = isset($data['descent']) ? $data['descent'] : null;
+        $this->container['min_altitude'] = isset($data['min_altitude']) ? $data['min_altitude'] : null;
+        $this->container['max_altitude'] = isset($data['max_altitude']) ? $data['max_altitude'] : null;
     }
 
     /**
@@ -221,121 +215,97 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets is_recommendation
+     * Gets ascent
      *
-     * @return bool
+     * @return int
      */
-    public function getIsRecommendation()
+    public function getAscent()
     {
-        return $this->container['is_recommendation'];
+        return $this->container['ascent'];
     }
 
     /**
-     * Sets is_recommendation
+     * Sets ascent
      *
-     * @param bool $is_recommendation is_recommendation
+     * @param int $ascent ascent
      *
      * @return $this
      */
-    public function setIsRecommendation($is_recommendation)
+    public function setAscent($ascent)
     {
-        $this->container['is_recommendation'] = $is_recommendation;
+        $this->container['ascent'] = $ascent;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets descent
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getDescent()
     {
-        return $this->container['type'];
+        return $this->container['descent'];
     }
 
     /**
-     * Sets type
+     * Sets descent
      *
-     * @param string $type type
+     * @param int $descent descent
      *
      * @return $this
      */
-    public function setType($type)
+    public function setDescent($descent)
     {
-        $this->container['type'] = $type;
+        $this->container['descent'] = $descent;
 
         return $this;
     }
 
     /**
-     * Gets url
+     * Gets min_altitude
      *
-     * @return string
+     * @return int
      */
-    public function getUrl()
+    public function getMinAltitude()
     {
-        return $this->container['url'];
+        return $this->container['min_altitude'];
     }
 
     /**
-     * Sets url
+     * Sets min_altitude
      *
-     * @param string $url url
+     * @param int $min_altitude min_altitude
      *
      * @return $this
      */
-    public function setUrl($url)
+    public function setMinAltitude($min_altitude)
     {
-        $this->container['url'] = $url;
+        $this->container['min_altitude'] = $min_altitude;
 
         return $this;
     }
 
     /**
-     * Gets in_language
+     * Gets max_altitude
      *
-     * @return string
+     * @return int
      */
-    public function getInLanguage()
+    public function getMaxAltitude()
     {
-        return $this->container['in_language'];
+        return $this->container['max_altitude'];
     }
 
     /**
-     * Sets in_language
+     * Sets max_altitude
      *
-     * @param string $in_language in_language
+     * @param int $max_altitude max_altitude
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setMaxAltitude($max_altitude)
     {
-        $this->container['in_language'] = $in_language;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
-     *
-     * @return map[string,string]
-     */
-    public function getTitle()
-    {
-        return $this->container['title'];
-    }
-
-    /**
-     * Sets title
-     *
-     * @param map[string,string] $title title
-     *
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        $this->container['title'] = $title;
+        $this->container['max_altitude'] = $max_altitude;
 
         return $this;
     }

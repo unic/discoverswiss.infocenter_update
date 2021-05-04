@@ -1,6 +1,6 @@
 <?php
 /**
- * DsLinkRequest
+ * DsDataGovernanceRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InfocenterUpdate\Client\ObjectSerializer;
 
 /**
- * DsLinkRequest Class Doc Comment
+ * DsDataGovernanceRequest Class Doc Comment
  *
  * @category Class
  * @package  InfocenterUpdate\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsLinkRequest implements ModelInterface, ArrayAccess
+class DsDataGovernanceRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LinkRequest';
+    protected static $swaggerModelName = 'DataGovernanceRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'is_recommendation' => 'bool',
-'type' => 'string',
-'url' => 'string',
-'in_language' => 'string',
-'title' => 'map[string,string]'    ];
+        'license' => 'string',
+'source' => '\InfocenterUpdate\Client\Model\DsPartnerRequest',
+'author' => '\InfocenterUpdate\Client\Model\DsPersonRequest',
+'created' => '\DateTime',
+'last_modified' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +68,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'is_recommendation' => null,
-'type' => null,
-'url' => null,
-'in_language' => null,
-'title' => null    ];
+        'license' => null,
+'source' => null,
+'author' => null,
+'created' => 'date-time',
+'last_modified' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +101,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_recommendation' => 'isRecommendation',
-'type' => 'type',
-'url' => 'url',
-'in_language' => 'inLanguage',
-'title' => 'title'    ];
+        'license' => 'license',
+'source' => 'source',
+'author' => 'author',
+'created' => 'created',
+'last_modified' => 'lastModified'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +113,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_recommendation' => 'setIsRecommendation',
-'type' => 'setType',
-'url' => 'setUrl',
-'in_language' => 'setInLanguage',
-'title' => 'setTitle'    ];
+        'license' => 'setLicense',
+'source' => 'setSource',
+'author' => 'setAuthor',
+'created' => 'setCreated',
+'last_modified' => 'setLastModified'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +125,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_recommendation' => 'getIsRecommendation',
-'type' => 'getType',
-'url' => 'getUrl',
-'in_language' => 'getInLanguage',
-'title' => 'getTitle'    ];
+        'license' => 'getLicense',
+'source' => 'getSource',
+'author' => 'getAuthor',
+'created' => 'getCreated',
+'last_modified' => 'getLastModified'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +189,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_recommendation'] = isset($data['is_recommendation']) ? $data['is_recommendation'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['license'] = isset($data['license']) ? $data['license'] : null;
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['author'] = isset($data['author']) ? $data['author'] : null;
+        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
+        $this->container['last_modified'] = isset($data['last_modified']) ? $data['last_modified'] : null;
     }
 
     /**
@@ -221,121 +221,121 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets is_recommendation
-     *
-     * @return bool
-     */
-    public function getIsRecommendation()
-    {
-        return $this->container['is_recommendation'];
-    }
-
-    /**
-     * Sets is_recommendation
-     *
-     * @param bool $is_recommendation is_recommendation
-     *
-     * @return $this
-     */
-    public function setIsRecommendation($is_recommendation)
-    {
-        $this->container['is_recommendation'] = $is_recommendation;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
+     * Gets license
      *
      * @return string
      */
-    public function getType()
+    public function getLicense()
     {
-        return $this->container['type'];
+        return $this->container['license'];
     }
 
     /**
-     * Sets type
+     * Sets license
      *
-     * @param string $type type
+     * @param string $license license
      *
      * @return $this
      */
-    public function setType($type)
+    public function setLicense($license)
     {
-        $this->container['type'] = $type;
+        $this->container['license'] = $license;
 
         return $this;
     }
 
     /**
-     * Gets url
+     * Gets source
      *
-     * @return string
+     * @return \InfocenterUpdate\Client\Model\DsPartnerRequest
      */
-    public function getUrl()
+    public function getSource()
     {
-        return $this->container['url'];
+        return $this->container['source'];
     }
 
     /**
-     * Sets url
+     * Sets source
      *
-     * @param string $url url
+     * @param \InfocenterUpdate\Client\Model\DsPartnerRequest $source source
      *
      * @return $this
      */
-    public function setUrl($url)
+    public function setSource($source)
     {
-        $this->container['url'] = $url;
+        $this->container['source'] = $source;
 
         return $this;
     }
 
     /**
-     * Gets in_language
+     * Gets author
      *
-     * @return string
+     * @return \InfocenterUpdate\Client\Model\DsPersonRequest
      */
-    public function getInLanguage()
+    public function getAuthor()
     {
-        return $this->container['in_language'];
+        return $this->container['author'];
     }
 
     /**
-     * Sets in_language
+     * Sets author
      *
-     * @param string $in_language in_language
+     * @param \InfocenterUpdate\Client\Model\DsPersonRequest $author author
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setAuthor($author)
     {
-        $this->container['in_language'] = $in_language;
+        $this->container['author'] = $author;
 
         return $this;
     }
 
     /**
-     * Gets title
+     * Gets created
      *
-     * @return map[string,string]
+     * @return \DateTime
      */
-    public function getTitle()
+    public function getCreated()
     {
-        return $this->container['title'];
+        return $this->container['created'];
     }
 
     /**
-     * Sets title
+     * Sets created
      *
-     * @param map[string,string] $title title
+     * @param \DateTime $created created
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setCreated($created)
     {
-        $this->container['title'] = $title;
+        $this->container['created'] = $created;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_modified
+     *
+     * @return \DateTime
+     */
+    public function getLastModified()
+    {
+        return $this->container['last_modified'];
+    }
+
+    /**
+     * Sets last_modified
+     *
+     * @param \DateTime $last_modified last_modified
+     *
+     * @return $this
+     */
+    public function setLastModified($last_modified)
+    {
+        $this->container['last_modified'] = $last_modified;
 
         return $this;
     }

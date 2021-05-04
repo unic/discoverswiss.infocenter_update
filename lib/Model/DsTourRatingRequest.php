@@ -1,6 +1,6 @@
 <?php
 /**
- * DsLinkRequest
+ * DsTourRatingRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InfocenterUpdate\Client\ObjectSerializer;
 
 /**
- * DsLinkRequest Class Doc Comment
+ * DsTourRatingRequest Class Doc Comment
  *
  * @category Class
  * @package  InfocenterUpdate\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsLinkRequest implements ModelInterface, ArrayAccess
+class DsTourRatingRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LinkRequest';
+    protected static $swaggerModelName = 'TourRatingRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'is_recommendation' => 'bool',
-'type' => 'string',
-'url' => 'string',
-'in_language' => 'string',
-'title' => 'map[string,string]'    ];
+        'condition' => 'int',
+'difficulty' => 'int',
+'technique' => 'int',
+'quality_of_experience' => 'int',
+'landscape' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +68,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'is_recommendation' => null,
-'type' => null,
-'url' => null,
-'in_language' => null,
-'title' => null    ];
+        'condition' => 'int32',
+'difficulty' => 'int32',
+'technique' => 'int32',
+'quality_of_experience' => 'int32',
+'landscape' => 'int32'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +101,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_recommendation' => 'isRecommendation',
-'type' => 'type',
-'url' => 'url',
-'in_language' => 'inLanguage',
-'title' => 'title'    ];
+        'condition' => 'condition',
+'difficulty' => 'difficulty',
+'technique' => 'technique',
+'quality_of_experience' => 'qualityOfExperience',
+'landscape' => 'landscape'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +113,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_recommendation' => 'setIsRecommendation',
-'type' => 'setType',
-'url' => 'setUrl',
-'in_language' => 'setInLanguage',
-'title' => 'setTitle'    ];
+        'condition' => 'setCondition',
+'difficulty' => 'setDifficulty',
+'technique' => 'setTechnique',
+'quality_of_experience' => 'setQualityOfExperience',
+'landscape' => 'setLandscape'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +125,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_recommendation' => 'getIsRecommendation',
-'type' => 'getType',
-'url' => 'getUrl',
-'in_language' => 'getInLanguage',
-'title' => 'getTitle'    ];
+        'condition' => 'getCondition',
+'difficulty' => 'getDifficulty',
+'technique' => 'getTechnique',
+'quality_of_experience' => 'getQualityOfExperience',
+'landscape' => 'getLandscape'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +189,11 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_recommendation'] = isset($data['is_recommendation']) ? $data['is_recommendation'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['condition'] = isset($data['condition']) ? $data['condition'] : null;
+        $this->container['difficulty'] = isset($data['difficulty']) ? $data['difficulty'] : null;
+        $this->container['technique'] = isset($data['technique']) ? $data['technique'] : null;
+        $this->container['quality_of_experience'] = isset($data['quality_of_experience']) ? $data['quality_of_experience'] : null;
+        $this->container['landscape'] = isset($data['landscape']) ? $data['landscape'] : null;
     }
 
     /**
@@ -221,121 +221,121 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets is_recommendation
+     * Gets condition
      *
-     * @return bool
+     * @return int
      */
-    public function getIsRecommendation()
+    public function getCondition()
     {
-        return $this->container['is_recommendation'];
+        return $this->container['condition'];
     }
 
     /**
-     * Sets is_recommendation
+     * Sets condition
      *
-     * @param bool $is_recommendation is_recommendation
+     * @param int $condition condition
      *
      * @return $this
      */
-    public function setIsRecommendation($is_recommendation)
+    public function setCondition($condition)
     {
-        $this->container['is_recommendation'] = $is_recommendation;
+        $this->container['condition'] = $condition;
 
         return $this;
     }
 
     /**
-     * Gets type
+     * Gets difficulty
      *
-     * @return string
+     * @return int
      */
-    public function getType()
+    public function getDifficulty()
     {
-        return $this->container['type'];
+        return $this->container['difficulty'];
     }
 
     /**
-     * Sets type
+     * Sets difficulty
      *
-     * @param string $type type
+     * @param int $difficulty difficulty
      *
      * @return $this
      */
-    public function setType($type)
+    public function setDifficulty($difficulty)
     {
-        $this->container['type'] = $type;
+        $this->container['difficulty'] = $difficulty;
 
         return $this;
     }
 
     /**
-     * Gets url
+     * Gets technique
      *
-     * @return string
+     * @return int
      */
-    public function getUrl()
+    public function getTechnique()
     {
-        return $this->container['url'];
+        return $this->container['technique'];
     }
 
     /**
-     * Sets url
+     * Sets technique
      *
-     * @param string $url url
+     * @param int $technique technique
      *
      * @return $this
      */
-    public function setUrl($url)
+    public function setTechnique($technique)
     {
-        $this->container['url'] = $url;
+        $this->container['technique'] = $technique;
 
         return $this;
     }
 
     /**
-     * Gets in_language
+     * Gets quality_of_experience
      *
-     * @return string
+     * @return int
      */
-    public function getInLanguage()
+    public function getQualityOfExperience()
     {
-        return $this->container['in_language'];
+        return $this->container['quality_of_experience'];
     }
 
     /**
-     * Sets in_language
+     * Sets quality_of_experience
      *
-     * @param string $in_language in_language
+     * @param int $quality_of_experience quality_of_experience
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setQualityOfExperience($quality_of_experience)
     {
-        $this->container['in_language'] = $in_language;
+        $this->container['quality_of_experience'] = $quality_of_experience;
 
         return $this;
     }
 
     /**
-     * Gets title
+     * Gets landscape
      *
-     * @return map[string,string]
+     * @return int
      */
-    public function getTitle()
+    public function getLandscape()
     {
-        return $this->container['title'];
+        return $this->container['landscape'];
     }
 
     /**
-     * Sets title
+     * Sets landscape
      *
-     * @param map[string,string] $title title
+     * @param int $landscape landscape
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setLandscape($landscape)
     {
-        $this->container['title'] = $title;
+        $this->container['landscape'] = $landscape;
 
         return $this;
     }

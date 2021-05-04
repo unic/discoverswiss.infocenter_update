@@ -1,6 +1,6 @@
 <?php
 /**
- * DsCreativeWorkRequest
+ * DsImageObjectRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InfocenterUpdate\Client\ObjectSerializer;
 
 /**
- * DsCreativeWorkRequest Class Doc Comment
+ * DsImageObjectRequest Class Doc Comment
  *
  * @category Class
  * @package  InfocenterUpdate\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
+class DsImageObjectRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreativeWorkRequest';
+    protected static $swaggerModelName = 'ImageObjectRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content_reference_time' => '\DateTime',
+        'caption' => 'map[string,string]',
+'content_url' => 'string',
+'content_reference_time' => '\DateTime',
 'copyright_year' => 'int',
 'encoding_format' => 'string',
 'is_accessible_for_free' => 'bool',
@@ -84,7 +86,9 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'content_reference_time' => 'date-time',
+        'caption' => null,
+'content_url' => null,
+'content_reference_time' => 'date-time',
 'copyright_year' => 'int32',
 'encoding_format' => null,
 'is_accessible_for_free' => null,
@@ -133,7 +137,9 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'content_reference_time' => 'contentReferenceTime',
+        'caption' => 'caption',
+'content_url' => 'contentUrl',
+'content_reference_time' => 'contentReferenceTime',
 'copyright_year' => 'copyrightYear',
 'encoding_format' => 'encodingFormat',
 'is_accessible_for_free' => 'isAccessibleForFree',
@@ -161,7 +167,9 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'content_reference_time' => 'setContentReferenceTime',
+        'caption' => 'setCaption',
+'content_url' => 'setContentUrl',
+'content_reference_time' => 'setContentReferenceTime',
 'copyright_year' => 'setCopyrightYear',
 'encoding_format' => 'setEncodingFormat',
 'is_accessible_for_free' => 'setIsAccessibleForFree',
@@ -189,7 +197,9 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'content_reference_time' => 'getContentReferenceTime',
+        'caption' => 'getCaption',
+'content_url' => 'getContentUrl',
+'content_reference_time' => 'getContentReferenceTime',
 'copyright_year' => 'getCopyrightYear',
 'encoding_format' => 'getEncodingFormat',
 'is_accessible_for_free' => 'getIsAccessibleForFree',
@@ -269,6 +279,8 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['caption'] = isset($data['caption']) ? $data['caption'] : null;
+        $this->container['content_url'] = isset($data['content_url']) ? $data['content_url'] : null;
         $this->container['content_reference_time'] = isset($data['content_reference_time']) ? $data['content_reference_time'] : null;
         $this->container['copyright_year'] = isset($data['copyright_year']) ? $data['copyright_year'] : null;
         $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
@@ -315,6 +327,54 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets caption
+     *
+     * @return map[string,string]
+     */
+    public function getCaption()
+    {
+        return $this->container['caption'];
+    }
+
+    /**
+     * Sets caption
+     *
+     * @param map[string,string] $caption caption
+     *
+     * @return $this
+     */
+    public function setCaption($caption)
+    {
+        $this->container['caption'] = $caption;
+
+        return $this;
+    }
+
+    /**
+     * Gets content_url
+     *
+     * @return string
+     */
+    public function getContentUrl()
+    {
+        return $this->container['content_url'];
+    }
+
+    /**
+     * Sets content_url
+     *
+     * @param string $content_url content_url
+     *
+     * @return $this
+     */
+    public function setContentUrl($content_url)
+    {
+        $this->container['content_url'] = $content_url;
+
+        return $this;
+    }
 
     /**
      * Gets content_reference_time

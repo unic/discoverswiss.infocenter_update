@@ -1,20 +1,12 @@
-# DsCreativeWorkRequest
+# DsPersonRequest
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content_reference_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**copyright_year** | **int** |  | [optional] 
-**encoding_format** | **string** |  | [optional] 
-**is_accessible_for_free** | **bool** |  | [optional] 
-**thumbnail_url** | **string** |  | [optional] 
-**in_language** | **string** |  | [optional] 
-**category** | **string[]** |  | [optional] 
-**tag** | **string[]** |  | [optional] 
-**contained_in_place** | **string[]** |  | [optional] 
-**source_id** | **string** |  | [optional] 
-**auto_translate** | **bool** |  | [optional] 
-**data_governance** | [**\InfocenterUpdate\Client\Model\DsDataGovernanceRequest**](DsDataGovernanceRequest.md) |  | [optional] 
+**given_name** | **string** |  | [optional] 
+**family_name** | **string** |  | [optional] 
+**email** | **string** |  | [optional] 
+**gender** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **link** | [**\InfocenterUpdate\Client\Model\DsLinkRequest[]**](DsLinkRequest.md) |  | [optional] 

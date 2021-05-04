@@ -1,20 +1,13 @@
-# DsCreativeWorkRequest
+# DsOpeningHoursSpecificationRequest
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content_reference_time** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**copyright_year** | **int** |  | [optional] 
-**encoding_format** | **string** |  | [optional] 
-**is_accessible_for_free** | **bool** |  | [optional] 
-**thumbnail_url** | **string** |  | [optional] 
-**in_language** | **string** |  | [optional] 
-**category** | **string[]** |  | [optional] 
-**tag** | **string[]** |  | [optional] 
-**contained_in_place** | **string[]** |  | [optional] 
-**source_id** | **string** |  | [optional] 
-**auto_translate** | **bool** |  | [optional] 
-**data_governance** | [**\InfocenterUpdate\Client\Model\DsDataGovernanceRequest**](DsDataGovernanceRequest.md) |  | [optional] 
+**opens** | **string** |  | [optional] 
+**valid_from** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**day_of_week** | **string** |  | [optional] 
+**valid_through** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**closes** | **string** |  | [optional] 
 **additional_type** | **string** |  | [optional] 
 **alternate_name** | **string** |  | [optional] 
 **link** | [**\InfocenterUpdate\Client\Model\DsLinkRequest[]**](DsLinkRequest.md) |  | [optional] 

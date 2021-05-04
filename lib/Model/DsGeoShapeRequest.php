@@ -1,6 +1,6 @@
 <?php
 /**
- * DsCreativeWorkRequest
+ * DsGeoShapeRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InfocenterUpdate\Client\ObjectSerializer;
 
 /**
- * DsCreativeWorkRequest Class Doc Comment
+ * DsGeoShapeRequest Class Doc Comment
  *
  * @category Class
  * @package  InfocenterUpdate\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
+class DsGeoShapeRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreativeWorkRequest';
+    protected static $swaggerModelName = 'GeoShapeRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,18 +56,15 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content_reference_time' => '\DateTime',
-'copyright_year' => 'int',
-'encoding_format' => 'string',
-'is_accessible_for_free' => 'bool',
-'thumbnail_url' => 'string',
-'in_language' => 'string',
-'category' => 'string[]',
-'tag' => 'string[]',
-'contained_in_place' => 'string[]',
-'source_id' => 'string',
-'auto_translate' => 'bool',
-'data_governance' => '\InfocenterUpdate\Client\Model\DsDataGovernanceRequest',
+        'address' => '\InfocenterUpdate\Client\Model\DsPostalAddressRequest',
+'address_country' => 'string',
+'elevation' => 'double',
+'postal_code' => 'string',
+'box' => 'string',
+'circle' => 'string',
+'line' => 'string',
+'polygon' => 'string',
+'multiline' => 'string',
 'additional_type' => 'string',
 'alternate_name' => 'string',
 'link' => '\InfocenterUpdate\Client\Model\DsLinkRequest[]',
@@ -84,18 +81,15 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'content_reference_time' => 'date-time',
-'copyright_year' => 'int32',
-'encoding_format' => null,
-'is_accessible_for_free' => null,
-'thumbnail_url' => null,
-'in_language' => null,
-'category' => null,
-'tag' => null,
-'contained_in_place' => null,
-'source_id' => null,
-'auto_translate' => null,
-'data_governance' => null,
+        'address' => null,
+'address_country' => null,
+'elevation' => 'double',
+'postal_code' => null,
+'box' => null,
+'circle' => null,
+'line' => null,
+'polygon' => null,
+'multiline' => null,
 'additional_type' => null,
 'alternate_name' => null,
 'link' => null,
@@ -133,18 +127,15 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'content_reference_time' => 'contentReferenceTime',
-'copyright_year' => 'copyrightYear',
-'encoding_format' => 'encodingFormat',
-'is_accessible_for_free' => 'isAccessibleForFree',
-'thumbnail_url' => 'thumbnailUrl',
-'in_language' => 'inLanguage',
-'category' => 'category',
-'tag' => 'tag',
-'contained_in_place' => 'containedInPlace',
-'source_id' => 'sourceId',
-'auto_translate' => 'autoTranslate',
-'data_governance' => 'dataGovernance',
+        'address' => 'address',
+'address_country' => 'addressCountry',
+'elevation' => 'elevation',
+'postal_code' => 'postalCode',
+'box' => 'box',
+'circle' => 'circle',
+'line' => 'line',
+'polygon' => 'polygon',
+'multiline' => 'multiline',
 'additional_type' => 'additionalType',
 'alternate_name' => 'alternateName',
 'link' => 'link',
@@ -161,18 +152,15 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'content_reference_time' => 'setContentReferenceTime',
-'copyright_year' => 'setCopyrightYear',
-'encoding_format' => 'setEncodingFormat',
-'is_accessible_for_free' => 'setIsAccessibleForFree',
-'thumbnail_url' => 'setThumbnailUrl',
-'in_language' => 'setInLanguage',
-'category' => 'setCategory',
-'tag' => 'setTag',
-'contained_in_place' => 'setContainedInPlace',
-'source_id' => 'setSourceId',
-'auto_translate' => 'setAutoTranslate',
-'data_governance' => 'setDataGovernance',
+        'address' => 'setAddress',
+'address_country' => 'setAddressCountry',
+'elevation' => 'setElevation',
+'postal_code' => 'setPostalCode',
+'box' => 'setBox',
+'circle' => 'setCircle',
+'line' => 'setLine',
+'polygon' => 'setPolygon',
+'multiline' => 'setMultiline',
 'additional_type' => 'setAdditionalType',
 'alternate_name' => 'setAlternateName',
 'link' => 'setLink',
@@ -189,18 +177,15 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'content_reference_time' => 'getContentReferenceTime',
-'copyright_year' => 'getCopyrightYear',
-'encoding_format' => 'getEncodingFormat',
-'is_accessible_for_free' => 'getIsAccessibleForFree',
-'thumbnail_url' => 'getThumbnailUrl',
-'in_language' => 'getInLanguage',
-'category' => 'getCategory',
-'tag' => 'getTag',
-'contained_in_place' => 'getContainedInPlace',
-'source_id' => 'getSourceId',
-'auto_translate' => 'getAutoTranslate',
-'data_governance' => 'getDataGovernance',
+        'address' => 'getAddress',
+'address_country' => 'getAddressCountry',
+'elevation' => 'getElevation',
+'postal_code' => 'getPostalCode',
+'box' => 'getBox',
+'circle' => 'getCircle',
+'line' => 'getLine',
+'polygon' => 'getPolygon',
+'multiline' => 'getMultiline',
 'additional_type' => 'getAdditionalType',
 'alternate_name' => 'getAlternateName',
 'link' => 'getLink',
@@ -269,18 +254,15 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['content_reference_time'] = isset($data['content_reference_time']) ? $data['content_reference_time'] : null;
-        $this->container['copyright_year'] = isset($data['copyright_year']) ? $data['copyright_year'] : null;
-        $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
-        $this->container['is_accessible_for_free'] = isset($data['is_accessible_for_free']) ? $data['is_accessible_for_free'] : null;
-        $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
-        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
-        $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
-        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
-        $this->container['auto_translate'] = isset($data['auto_translate']) ? $data['auto_translate'] : null;
-        $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
+        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['address_country'] = isset($data['address_country']) ? $data['address_country'] : null;
+        $this->container['elevation'] = isset($data['elevation']) ? $data['elevation'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['box'] = isset($data['box']) ? $data['box'] : null;
+        $this->container['circle'] = isset($data['circle']) ? $data['circle'] : null;
+        $this->container['line'] = isset($data['line']) ? $data['line'] : null;
+        $this->container['polygon'] = isset($data['polygon']) ? $data['polygon'] : null;
+        $this->container['multiline'] = isset($data['multiline']) ? $data['multiline'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
@@ -317,289 +299,217 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets content_reference_time
+     * Gets address
      *
-     * @return \DateTime
+     * @return \InfocenterUpdate\Client\Model\DsPostalAddressRequest
      */
-    public function getContentReferenceTime()
+    public function getAddress()
     {
-        return $this->container['content_reference_time'];
+        return $this->container['address'];
     }
 
     /**
-     * Sets content_reference_time
+     * Sets address
      *
-     * @param \DateTime $content_reference_time content_reference_time
+     * @param \InfocenterUpdate\Client\Model\DsPostalAddressRequest $address address
      *
      * @return $this
      */
-    public function setContentReferenceTime($content_reference_time)
+    public function setAddress($address)
     {
-        $this->container['content_reference_time'] = $content_reference_time;
+        $this->container['address'] = $address;
 
         return $this;
     }
 
     /**
-     * Gets copyright_year
-     *
-     * @return int
-     */
-    public function getCopyrightYear()
-    {
-        return $this->container['copyright_year'];
-    }
-
-    /**
-     * Sets copyright_year
-     *
-     * @param int $copyright_year copyright_year
-     *
-     * @return $this
-     */
-    public function setCopyrightYear($copyright_year)
-    {
-        $this->container['copyright_year'] = $copyright_year;
-
-        return $this;
-    }
-
-    /**
-     * Gets encoding_format
+     * Gets address_country
      *
      * @return string
      */
-    public function getEncodingFormat()
+    public function getAddressCountry()
     {
-        return $this->container['encoding_format'];
+        return $this->container['address_country'];
     }
 
     /**
-     * Sets encoding_format
+     * Sets address_country
      *
-     * @param string $encoding_format encoding_format
+     * @param string $address_country address_country
      *
      * @return $this
      */
-    public function setEncodingFormat($encoding_format)
+    public function setAddressCountry($address_country)
     {
-        $this->container['encoding_format'] = $encoding_format;
+        $this->container['address_country'] = $address_country;
 
         return $this;
     }
 
     /**
-     * Gets is_accessible_for_free
+     * Gets elevation
      *
-     * @return bool
+     * @return double
      */
-    public function getIsAccessibleForFree()
+    public function getElevation()
     {
-        return $this->container['is_accessible_for_free'];
+        return $this->container['elevation'];
     }
 
     /**
-     * Sets is_accessible_for_free
+     * Sets elevation
      *
-     * @param bool $is_accessible_for_free is_accessible_for_free
+     * @param double $elevation elevation
      *
      * @return $this
      */
-    public function setIsAccessibleForFree($is_accessible_for_free)
+    public function setElevation($elevation)
     {
-        $this->container['is_accessible_for_free'] = $is_accessible_for_free;
+        $this->container['elevation'] = $elevation;
 
         return $this;
     }
 
     /**
-     * Gets thumbnail_url
+     * Gets postal_code
      *
      * @return string
      */
-    public function getThumbnailUrl()
+    public function getPostalCode()
     {
-        return $this->container['thumbnail_url'];
+        return $this->container['postal_code'];
     }
 
     /**
-     * Sets thumbnail_url
+     * Sets postal_code
      *
-     * @param string $thumbnail_url thumbnail_url
+     * @param string $postal_code postal_code
      *
      * @return $this
      */
-    public function setThumbnailUrl($thumbnail_url)
+    public function setPostalCode($postal_code)
     {
-        $this->container['thumbnail_url'] = $thumbnail_url;
+        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }
 
     /**
-     * Gets in_language
+     * Gets box
      *
      * @return string
      */
-    public function getInLanguage()
+    public function getBox()
     {
-        return $this->container['in_language'];
+        return $this->container['box'];
     }
 
     /**
-     * Sets in_language
+     * Sets box
      *
-     * @param string $in_language in_language
+     * @param string $box box
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setBox($box)
     {
-        $this->container['in_language'] = $in_language;
+        $this->container['box'] = $box;
 
         return $this;
     }
 
     /**
-     * Gets category
-     *
-     * @return string[]
-     */
-    public function getCategory()
-    {
-        return $this->container['category'];
-    }
-
-    /**
-     * Sets category
-     *
-     * @param string[] $category category
-     *
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $this->container['category'] = $category;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag
-     *
-     * @return string[]
-     */
-    public function getTag()
-    {
-        return $this->container['tag'];
-    }
-
-    /**
-     * Sets tag
-     *
-     * @param string[] $tag tag
-     *
-     * @return $this
-     */
-    public function setTag($tag)
-    {
-        $this->container['tag'] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * Gets contained_in_place
-     *
-     * @return string[]
-     */
-    public function getContainedInPlace()
-    {
-        return $this->container['contained_in_place'];
-    }
-
-    /**
-     * Sets contained_in_place
-     *
-     * @param string[] $contained_in_place contained_in_place
-     *
-     * @return $this
-     */
-    public function setContainedInPlace($contained_in_place)
-    {
-        $this->container['contained_in_place'] = $contained_in_place;
-
-        return $this;
-    }
-
-    /**
-     * Gets source_id
+     * Gets circle
      *
      * @return string
      */
-    public function getSourceId()
+    public function getCircle()
     {
-        return $this->container['source_id'];
+        return $this->container['circle'];
     }
 
     /**
-     * Sets source_id
+     * Sets circle
      *
-     * @param string $source_id source_id
+     * @param string $circle circle
      *
      * @return $this
      */
-    public function setSourceId($source_id)
+    public function setCircle($circle)
     {
-        $this->container['source_id'] = $source_id;
+        $this->container['circle'] = $circle;
 
         return $this;
     }
 
     /**
-     * Gets auto_translate
+     * Gets line
      *
-     * @return bool
+     * @return string
      */
-    public function getAutoTranslate()
+    public function getLine()
     {
-        return $this->container['auto_translate'];
+        return $this->container['line'];
     }
 
     /**
-     * Sets auto_translate
+     * Sets line
      *
-     * @param bool $auto_translate auto_translate
+     * @param string $line line
      *
      * @return $this
      */
-    public function setAutoTranslate($auto_translate)
+    public function setLine($line)
     {
-        $this->container['auto_translate'] = $auto_translate;
+        $this->container['line'] = $line;
 
         return $this;
     }
 
     /**
-     * Gets data_governance
+     * Gets polygon
      *
-     * @return \InfocenterUpdate\Client\Model\DsDataGovernanceRequest
+     * @return string
      */
-    public function getDataGovernance()
+    public function getPolygon()
     {
-        return $this->container['data_governance'];
+        return $this->container['polygon'];
     }
 
     /**
-     * Sets data_governance
+     * Sets polygon
      *
-     * @param \InfocenterUpdate\Client\Model\DsDataGovernanceRequest $data_governance data_governance
+     * @param string $polygon polygon
      *
      * @return $this
      */
-    public function setDataGovernance($data_governance)
+    public function setPolygon($polygon)
     {
-        $this->container['data_governance'] = $data_governance;
+        $this->container['polygon'] = $polygon;
+
+        return $this;
+    }
+
+    /**
+     * Gets multiline
+     *
+     * @return string
+     */
+    public function getMultiline()
+    {
+        return $this->container['multiline'];
+    }
+
+    /**
+     * Sets multiline
+     *
+     * @param string $multiline multiline
+     *
+     * @return $this
+     */
+    public function setMultiline($multiline)
+    {
+        $this->container['multiline'] = $multiline;
 
         return $this;
     }

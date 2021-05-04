@@ -1,6 +1,6 @@
 <?php
 /**
- * DsCreativeWorkRequest
+ * DsPersonRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InfocenterUpdate\Client\ObjectSerializer;
 
 /**
- * DsCreativeWorkRequest Class Doc Comment
+ * DsPersonRequest Class Doc Comment
  *
  * @category Class
  * @package  InfocenterUpdate\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
+class DsPersonRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreativeWorkRequest';
+    protected static $swaggerModelName = 'PersonRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,18 +56,10 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content_reference_time' => '\DateTime',
-'copyright_year' => 'int',
-'encoding_format' => 'string',
-'is_accessible_for_free' => 'bool',
-'thumbnail_url' => 'string',
-'in_language' => 'string',
-'category' => 'string[]',
-'tag' => 'string[]',
-'contained_in_place' => 'string[]',
-'source_id' => 'string',
-'auto_translate' => 'bool',
-'data_governance' => '\InfocenterUpdate\Client\Model\DsDataGovernanceRequest',
+        'given_name' => 'string',
+'family_name' => 'string',
+'email' => 'string',
+'gender' => 'string',
 'additional_type' => 'string',
 'alternate_name' => 'string',
 'link' => '\InfocenterUpdate\Client\Model\DsLinkRequest[]',
@@ -84,18 +76,10 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'content_reference_time' => 'date-time',
-'copyright_year' => 'int32',
-'encoding_format' => null,
-'is_accessible_for_free' => null,
-'thumbnail_url' => null,
-'in_language' => null,
-'category' => null,
-'tag' => null,
-'contained_in_place' => null,
-'source_id' => null,
-'auto_translate' => null,
-'data_governance' => null,
+        'given_name' => null,
+'family_name' => null,
+'email' => null,
+'gender' => null,
 'additional_type' => null,
 'alternate_name' => null,
 'link' => null,
@@ -133,18 +117,10 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'content_reference_time' => 'contentReferenceTime',
-'copyright_year' => 'copyrightYear',
-'encoding_format' => 'encodingFormat',
-'is_accessible_for_free' => 'isAccessibleForFree',
-'thumbnail_url' => 'thumbnailUrl',
-'in_language' => 'inLanguage',
-'category' => 'category',
-'tag' => 'tag',
-'contained_in_place' => 'containedInPlace',
-'source_id' => 'sourceId',
-'auto_translate' => 'autoTranslate',
-'data_governance' => 'dataGovernance',
+        'given_name' => 'givenName',
+'family_name' => 'familyName',
+'email' => 'email',
+'gender' => 'gender',
 'additional_type' => 'additionalType',
 'alternate_name' => 'alternateName',
 'link' => 'link',
@@ -161,18 +137,10 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'content_reference_time' => 'setContentReferenceTime',
-'copyright_year' => 'setCopyrightYear',
-'encoding_format' => 'setEncodingFormat',
-'is_accessible_for_free' => 'setIsAccessibleForFree',
-'thumbnail_url' => 'setThumbnailUrl',
-'in_language' => 'setInLanguage',
-'category' => 'setCategory',
-'tag' => 'setTag',
-'contained_in_place' => 'setContainedInPlace',
-'source_id' => 'setSourceId',
-'auto_translate' => 'setAutoTranslate',
-'data_governance' => 'setDataGovernance',
+        'given_name' => 'setGivenName',
+'family_name' => 'setFamilyName',
+'email' => 'setEmail',
+'gender' => 'setGender',
 'additional_type' => 'setAdditionalType',
 'alternate_name' => 'setAlternateName',
 'link' => 'setLink',
@@ -189,18 +157,10 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'content_reference_time' => 'getContentReferenceTime',
-'copyright_year' => 'getCopyrightYear',
-'encoding_format' => 'getEncodingFormat',
-'is_accessible_for_free' => 'getIsAccessibleForFree',
-'thumbnail_url' => 'getThumbnailUrl',
-'in_language' => 'getInLanguage',
-'category' => 'getCategory',
-'tag' => 'getTag',
-'contained_in_place' => 'getContainedInPlace',
-'source_id' => 'getSourceId',
-'auto_translate' => 'getAutoTranslate',
-'data_governance' => 'getDataGovernance',
+        'given_name' => 'getGivenName',
+'family_name' => 'getFamilyName',
+'email' => 'getEmail',
+'gender' => 'getGender',
 'additional_type' => 'getAdditionalType',
 'alternate_name' => 'getAlternateName',
 'link' => 'getLink',
@@ -269,18 +229,10 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['content_reference_time'] = isset($data['content_reference_time']) ? $data['content_reference_time'] : null;
-        $this->container['copyright_year'] = isset($data['copyright_year']) ? $data['copyright_year'] : null;
-        $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
-        $this->container['is_accessible_for_free'] = isset($data['is_accessible_for_free']) ? $data['is_accessible_for_free'] : null;
-        $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
-        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
-        $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
-        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
-        $this->container['auto_translate'] = isset($data['auto_translate']) ? $data['auto_translate'] : null;
-        $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
+        $this->container['given_name'] = isset($data['given_name']) ? $data['given_name'] : null;
+        $this->container['family_name'] = isset($data['family_name']) ? $data['family_name'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
@@ -317,289 +269,97 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets content_reference_time
-     *
-     * @return \DateTime
-     */
-    public function getContentReferenceTime()
-    {
-        return $this->container['content_reference_time'];
-    }
-
-    /**
-     * Sets content_reference_time
-     *
-     * @param \DateTime $content_reference_time content_reference_time
-     *
-     * @return $this
-     */
-    public function setContentReferenceTime($content_reference_time)
-    {
-        $this->container['content_reference_time'] = $content_reference_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets copyright_year
-     *
-     * @return int
-     */
-    public function getCopyrightYear()
-    {
-        return $this->container['copyright_year'];
-    }
-
-    /**
-     * Sets copyright_year
-     *
-     * @param int $copyright_year copyright_year
-     *
-     * @return $this
-     */
-    public function setCopyrightYear($copyright_year)
-    {
-        $this->container['copyright_year'] = $copyright_year;
-
-        return $this;
-    }
-
-    /**
-     * Gets encoding_format
+     * Gets given_name
      *
      * @return string
      */
-    public function getEncodingFormat()
+    public function getGivenName()
     {
-        return $this->container['encoding_format'];
+        return $this->container['given_name'];
     }
 
     /**
-     * Sets encoding_format
+     * Sets given_name
      *
-     * @param string $encoding_format encoding_format
+     * @param string $given_name given_name
      *
      * @return $this
      */
-    public function setEncodingFormat($encoding_format)
+    public function setGivenName($given_name)
     {
-        $this->container['encoding_format'] = $encoding_format;
+        $this->container['given_name'] = $given_name;
 
         return $this;
     }
 
     /**
-     * Gets is_accessible_for_free
-     *
-     * @return bool
-     */
-    public function getIsAccessibleForFree()
-    {
-        return $this->container['is_accessible_for_free'];
-    }
-
-    /**
-     * Sets is_accessible_for_free
-     *
-     * @param bool $is_accessible_for_free is_accessible_for_free
-     *
-     * @return $this
-     */
-    public function setIsAccessibleForFree($is_accessible_for_free)
-    {
-        $this->container['is_accessible_for_free'] = $is_accessible_for_free;
-
-        return $this;
-    }
-
-    /**
-     * Gets thumbnail_url
+     * Gets family_name
      *
      * @return string
      */
-    public function getThumbnailUrl()
+    public function getFamilyName()
     {
-        return $this->container['thumbnail_url'];
+        return $this->container['family_name'];
     }
 
     /**
-     * Sets thumbnail_url
+     * Sets family_name
      *
-     * @param string $thumbnail_url thumbnail_url
+     * @param string $family_name family_name
      *
      * @return $this
      */
-    public function setThumbnailUrl($thumbnail_url)
+    public function setFamilyName($family_name)
     {
-        $this->container['thumbnail_url'] = $thumbnail_url;
+        $this->container['family_name'] = $family_name;
 
         return $this;
     }
 
     /**
-     * Gets in_language
+     * Gets email
      *
      * @return string
      */
-    public function getInLanguage()
+    public function getEmail()
     {
-        return $this->container['in_language'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets in_language
+     * Sets email
      *
-     * @param string $in_language in_language
+     * @param string $email email
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setEmail($email)
     {
-        $this->container['in_language'] = $in_language;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets category
-     *
-     * @return string[]
-     */
-    public function getCategory()
-    {
-        return $this->container['category'];
-    }
-
-    /**
-     * Sets category
-     *
-     * @param string[] $category category
-     *
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $this->container['category'] = $category;
-
-        return $this;
-    }
-
-    /**
-     * Gets tag
-     *
-     * @return string[]
-     */
-    public function getTag()
-    {
-        return $this->container['tag'];
-    }
-
-    /**
-     * Sets tag
-     *
-     * @param string[] $tag tag
-     *
-     * @return $this
-     */
-    public function setTag($tag)
-    {
-        $this->container['tag'] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * Gets contained_in_place
-     *
-     * @return string[]
-     */
-    public function getContainedInPlace()
-    {
-        return $this->container['contained_in_place'];
-    }
-
-    /**
-     * Sets contained_in_place
-     *
-     * @param string[] $contained_in_place contained_in_place
-     *
-     * @return $this
-     */
-    public function setContainedInPlace($contained_in_place)
-    {
-        $this->container['contained_in_place'] = $contained_in_place;
-
-        return $this;
-    }
-
-    /**
-     * Gets source_id
+     * Gets gender
      *
      * @return string
      */
-    public function getSourceId()
+    public function getGender()
     {
-        return $this->container['source_id'];
+        return $this->container['gender'];
     }
 
     /**
-     * Sets source_id
+     * Sets gender
      *
-     * @param string $source_id source_id
+     * @param string $gender gender
      *
      * @return $this
      */
-    public function setSourceId($source_id)
+    public function setGender($gender)
     {
-        $this->container['source_id'] = $source_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets auto_translate
-     *
-     * @return bool
-     */
-    public function getAutoTranslate()
-    {
-        return $this->container['auto_translate'];
-    }
-
-    /**
-     * Sets auto_translate
-     *
-     * @param bool $auto_translate auto_translate
-     *
-     * @return $this
-     */
-    public function setAutoTranslate($auto_translate)
-    {
-        $this->container['auto_translate'] = $auto_translate;
-
-        return $this;
-    }
-
-    /**
-     * Gets data_governance
-     *
-     * @return \InfocenterUpdate\Client\Model\DsDataGovernanceRequest
-     */
-    public function getDataGovernance()
-    {
-        return $this->container['data_governance'];
-    }
-
-    /**
-     * Sets data_governance
-     *
-     * @param \InfocenterUpdate\Client\Model\DsDataGovernanceRequest $data_governance data_governance
-     *
-     * @return $this
-     */
-    public function setDataGovernance($data_governance)
-    {
-        $this->container['data_governance'] = $data_governance;
+        $this->container['gender'] = $gender;
 
         return $this;
     }

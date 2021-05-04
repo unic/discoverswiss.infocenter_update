@@ -1,6 +1,6 @@
 <?php
 /**
- * DsLinkRequest
+ * DsPartnerRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InfocenterUpdate\Client\ObjectSerializer;
 
 /**
- * DsLinkRequest Class Doc Comment
+ * DsPartnerRequest Class Doc Comment
  *
  * @category Class
  * @package  InfocenterUpdate\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsLinkRequest implements ModelInterface, ArrayAccess
+class DsPartnerRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LinkRequest';
+    protected static $swaggerModelName = 'PartnerRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'is_recommendation' => 'bool',
-'type' => 'string',
-'url' => 'string',
-'in_language' => 'string',
-'title' => 'map[string,string]'    ];
+        'acronym' => 'string',
+'name' => 'map[string,string]',
+'logo' => '\InfocenterUpdate\Client\Model\DsImageObjectRequest',
+'link' => '\InfocenterUpdate\Client\Model\DsLinkRequest[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +67,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'is_recommendation' => null,
-'type' => null,
-'url' => null,
-'in_language' => null,
-'title' => null    ];
+        'acronym' => null,
+'name' => null,
+'logo' => null,
+'link' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +99,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_recommendation' => 'isRecommendation',
-'type' => 'type',
-'url' => 'url',
-'in_language' => 'inLanguage',
-'title' => 'title'    ];
+        'acronym' => 'acronym',
+'name' => 'name',
+'logo' => 'logo',
+'link' => 'link'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +110,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'is_recommendation' => 'setIsRecommendation',
-'type' => 'setType',
-'url' => 'setUrl',
-'in_language' => 'setInLanguage',
-'title' => 'setTitle'    ];
+        'acronym' => 'setAcronym',
+'name' => 'setName',
+'logo' => 'setLogo',
+'link' => 'setLink'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +121,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'is_recommendation' => 'getIsRecommendation',
-'type' => 'getType',
-'url' => 'getUrl',
-'in_language' => 'getInLanguage',
-'title' => 'getTitle'    ];
+        'acronym' => 'getAcronym',
+'name' => 'getName',
+'logo' => 'getLogo',
+'link' => 'getLink'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +184,10 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['is_recommendation'] = isset($data['is_recommendation']) ? $data['is_recommendation'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['acronym'] = isset($data['acronym']) ? $data['acronym'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['logo'] = isset($data['logo']) ? $data['logo'] : null;
+        $this->container['link'] = isset($data['link']) ? $data['link'] : null;
     }
 
     /**
@@ -221,121 +215,97 @@ class DsLinkRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets is_recommendation
-     *
-     * @return bool
-     */
-    public function getIsRecommendation()
-    {
-        return $this->container['is_recommendation'];
-    }
-
-    /**
-     * Sets is_recommendation
-     *
-     * @param bool $is_recommendation is_recommendation
-     *
-     * @return $this
-     */
-    public function setIsRecommendation($is_recommendation)
-    {
-        $this->container['is_recommendation'] = $is_recommendation;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
+     * Gets acronym
      *
      * @return string
      */
-    public function getType()
+    public function getAcronym()
     {
-        return $this->container['type'];
+        return $this->container['acronym'];
     }
 
     /**
-     * Sets type
+     * Sets acronym
      *
-     * @param string $type type
+     * @param string $acronym acronym
      *
      * @return $this
      */
-    public function setType($type)
+    public function setAcronym($acronym)
     {
-        $this->container['type'] = $type;
+        $this->container['acronym'] = $acronym;
 
         return $this;
     }
 
     /**
-     * Gets url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string $url url
-     *
-     * @return $this
-     */
-    public function setUrl($url)
-    {
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
-     * Gets in_language
-     *
-     * @return string
-     */
-    public function getInLanguage()
-    {
-        return $this->container['in_language'];
-    }
-
-    /**
-     * Sets in_language
-     *
-     * @param string $in_language in_language
-     *
-     * @return $this
-     */
-    public function setInLanguage($in_language)
-    {
-        $this->container['in_language'] = $in_language;
-
-        return $this;
-    }
-
-    /**
-     * Gets title
+     * Gets name
      *
      * @return map[string,string]
      */
-    public function getTitle()
+    public function getName()
     {
-        return $this->container['title'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets title
+     * Sets name
      *
-     * @param map[string,string] $title title
+     * @param map[string,string] $name name
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setName($name)
     {
-        $this->container['title'] = $title;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets logo
+     *
+     * @return \InfocenterUpdate\Client\Model\DsImageObjectRequest
+     */
+    public function getLogo()
+    {
+        return $this->container['logo'];
+    }
+
+    /**
+     * Sets logo
+     *
+     * @param \InfocenterUpdate\Client\Model\DsImageObjectRequest $logo logo
+     *
+     * @return $this
+     */
+    public function setLogo($logo)
+    {
+        $this->container['logo'] = $logo;
+
+        return $this;
+    }
+
+    /**
+     * Gets link
+     *
+     * @return \InfocenterUpdate\Client\Model\DsLinkRequest[]
+     */
+    public function getLink()
+    {
+        return $this->container['link'];
+    }
+
+    /**
+     * Sets link
+     *
+     * @param \InfocenterUpdate\Client\Model\DsLinkRequest[] $link link
+     *
+     * @return $this
+     */
+    public function setLink($link)
+    {
+        $this->container['link'] = $link;
 
         return $this;
     }

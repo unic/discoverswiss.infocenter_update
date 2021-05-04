@@ -1,6 +1,6 @@
 <?php
 /**
- * DsCreativeWorkRequest
+ * DsPostalAddressRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \InfocenterUpdate\Client\ObjectSerializer;
 
 /**
- * DsCreativeWorkRequest Class Doc Comment
+ * DsPostalAddressRequest Class Doc Comment
  *
  * @category Class
  * @package  InfocenterUpdate\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
+class DsPostalAddressRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreativeWorkRequest';
+    protected static $swaggerModelName = 'PostalAddressRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,18 +56,19 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'content_reference_time' => '\DateTime',
-'copyright_year' => 'int',
-'encoding_format' => 'string',
-'is_accessible_for_free' => 'bool',
-'thumbnail_url' => 'string',
-'in_language' => 'string',
-'category' => 'string[]',
-'tag' => 'string[]',
-'contained_in_place' => 'string[]',
-'source_id' => 'string',
-'auto_translate' => 'bool',
-'data_governance' => '\InfocenterUpdate\Client\Model\DsDataGovernanceRequest',
+        'address_country' => 'string',
+'address_locality' => 'string',
+'address_region' => 'string',
+'postal_code' => 'string',
+'post_office_box_number' => 'string',
+'street_address' => 'string',
+'address_line' => 'string',
+'available_language' => 'string[]',
+'contact_type' => 'string',
+'email' => 'string',
+'fax_number' => 'string',
+'telephone' => 'string',
+'hours_available' => '\InfocenterUpdate\Client\Model\DsOpeningHoursSpecificationRequest[]',
 'additional_type' => 'string',
 'alternate_name' => 'string',
 'link' => '\InfocenterUpdate\Client\Model\DsLinkRequest[]',
@@ -84,18 +85,19 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'content_reference_time' => 'date-time',
-'copyright_year' => 'int32',
-'encoding_format' => null,
-'is_accessible_for_free' => null,
-'thumbnail_url' => null,
-'in_language' => null,
-'category' => null,
-'tag' => null,
-'contained_in_place' => null,
-'source_id' => null,
-'auto_translate' => null,
-'data_governance' => null,
+        'address_country' => null,
+'address_locality' => null,
+'address_region' => null,
+'postal_code' => null,
+'post_office_box_number' => null,
+'street_address' => null,
+'address_line' => null,
+'available_language' => null,
+'contact_type' => null,
+'email' => null,
+'fax_number' => null,
+'telephone' => null,
+'hours_available' => null,
 'additional_type' => null,
 'alternate_name' => null,
 'link' => null,
@@ -133,18 +135,19 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'content_reference_time' => 'contentReferenceTime',
-'copyright_year' => 'copyrightYear',
-'encoding_format' => 'encodingFormat',
-'is_accessible_for_free' => 'isAccessibleForFree',
-'thumbnail_url' => 'thumbnailUrl',
-'in_language' => 'inLanguage',
-'category' => 'category',
-'tag' => 'tag',
-'contained_in_place' => 'containedInPlace',
-'source_id' => 'sourceId',
-'auto_translate' => 'autoTranslate',
-'data_governance' => 'dataGovernance',
+        'address_country' => 'addressCountry',
+'address_locality' => 'addressLocality',
+'address_region' => 'addressRegion',
+'postal_code' => 'postalCode',
+'post_office_box_number' => 'postOfficeBoxNumber',
+'street_address' => 'streetAddress',
+'address_line' => 'addressLine',
+'available_language' => 'availableLanguage',
+'contact_type' => 'contactType',
+'email' => 'email',
+'fax_number' => 'faxNumber',
+'telephone' => 'telephone',
+'hours_available' => 'hoursAvailable',
 'additional_type' => 'additionalType',
 'alternate_name' => 'alternateName',
 'link' => 'link',
@@ -161,18 +164,19 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'content_reference_time' => 'setContentReferenceTime',
-'copyright_year' => 'setCopyrightYear',
-'encoding_format' => 'setEncodingFormat',
-'is_accessible_for_free' => 'setIsAccessibleForFree',
-'thumbnail_url' => 'setThumbnailUrl',
-'in_language' => 'setInLanguage',
-'category' => 'setCategory',
-'tag' => 'setTag',
-'contained_in_place' => 'setContainedInPlace',
-'source_id' => 'setSourceId',
-'auto_translate' => 'setAutoTranslate',
-'data_governance' => 'setDataGovernance',
+        'address_country' => 'setAddressCountry',
+'address_locality' => 'setAddressLocality',
+'address_region' => 'setAddressRegion',
+'postal_code' => 'setPostalCode',
+'post_office_box_number' => 'setPostOfficeBoxNumber',
+'street_address' => 'setStreetAddress',
+'address_line' => 'setAddressLine',
+'available_language' => 'setAvailableLanguage',
+'contact_type' => 'setContactType',
+'email' => 'setEmail',
+'fax_number' => 'setFaxNumber',
+'telephone' => 'setTelephone',
+'hours_available' => 'setHoursAvailable',
 'additional_type' => 'setAdditionalType',
 'alternate_name' => 'setAlternateName',
 'link' => 'setLink',
@@ -189,18 +193,19 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'content_reference_time' => 'getContentReferenceTime',
-'copyright_year' => 'getCopyrightYear',
-'encoding_format' => 'getEncodingFormat',
-'is_accessible_for_free' => 'getIsAccessibleForFree',
-'thumbnail_url' => 'getThumbnailUrl',
-'in_language' => 'getInLanguage',
-'category' => 'getCategory',
-'tag' => 'getTag',
-'contained_in_place' => 'getContainedInPlace',
-'source_id' => 'getSourceId',
-'auto_translate' => 'getAutoTranslate',
-'data_governance' => 'getDataGovernance',
+        'address_country' => 'getAddressCountry',
+'address_locality' => 'getAddressLocality',
+'address_region' => 'getAddressRegion',
+'postal_code' => 'getPostalCode',
+'post_office_box_number' => 'getPostOfficeBoxNumber',
+'street_address' => 'getStreetAddress',
+'address_line' => 'getAddressLine',
+'available_language' => 'getAvailableLanguage',
+'contact_type' => 'getContactType',
+'email' => 'getEmail',
+'fax_number' => 'getFaxNumber',
+'telephone' => 'getTelephone',
+'hours_available' => 'getHoursAvailable',
 'additional_type' => 'getAdditionalType',
 'alternate_name' => 'getAlternateName',
 'link' => 'getLink',
@@ -269,18 +274,19 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['content_reference_time'] = isset($data['content_reference_time']) ? $data['content_reference_time'] : null;
-        $this->container['copyright_year'] = isset($data['copyright_year']) ? $data['copyright_year'] : null;
-        $this->container['encoding_format'] = isset($data['encoding_format']) ? $data['encoding_format'] : null;
-        $this->container['is_accessible_for_free'] = isset($data['is_accessible_for_free']) ? $data['is_accessible_for_free'] : null;
-        $this->container['thumbnail_url'] = isset($data['thumbnail_url']) ? $data['thumbnail_url'] : null;
-        $this->container['in_language'] = isset($data['in_language']) ? $data['in_language'] : null;
-        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
-        $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
-        $this->container['contained_in_place'] = isset($data['contained_in_place']) ? $data['contained_in_place'] : null;
-        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
-        $this->container['auto_translate'] = isset($data['auto_translate']) ? $data['auto_translate'] : null;
-        $this->container['data_governance'] = isset($data['data_governance']) ? $data['data_governance'] : null;
+        $this->container['address_country'] = isset($data['address_country']) ? $data['address_country'] : null;
+        $this->container['address_locality'] = isset($data['address_locality']) ? $data['address_locality'] : null;
+        $this->container['address_region'] = isset($data['address_region']) ? $data['address_region'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['post_office_box_number'] = isset($data['post_office_box_number']) ? $data['post_office_box_number'] : null;
+        $this->container['street_address'] = isset($data['street_address']) ? $data['street_address'] : null;
+        $this->container['address_line'] = isset($data['address_line']) ? $data['address_line'] : null;
+        $this->container['available_language'] = isset($data['available_language']) ? $data['available_language'] : null;
+        $this->container['contact_type'] = isset($data['contact_type']) ? $data['contact_type'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['fax_number'] = isset($data['fax_number']) ? $data['fax_number'] : null;
+        $this->container['telephone'] = isset($data['telephone']) ? $data['telephone'] : null;
+        $this->container['hours_available'] = isset($data['hours_available']) ? $data['hours_available'] : null;
         $this->container['additional_type'] = isset($data['additional_type']) ? $data['additional_type'] : null;
         $this->container['alternate_name'] = isset($data['alternate_name']) ? $data['alternate_name'] : null;
         $this->container['link'] = isset($data['link']) ? $data['link'] : null;
@@ -317,289 +323,313 @@ class DsCreativeWorkRequest implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets content_reference_time
-     *
-     * @return \DateTime
-     */
-    public function getContentReferenceTime()
-    {
-        return $this->container['content_reference_time'];
-    }
-
-    /**
-     * Sets content_reference_time
-     *
-     * @param \DateTime $content_reference_time content_reference_time
-     *
-     * @return $this
-     */
-    public function setContentReferenceTime($content_reference_time)
-    {
-        $this->container['content_reference_time'] = $content_reference_time;
-
-        return $this;
-    }
-
-    /**
-     * Gets copyright_year
-     *
-     * @return int
-     */
-    public function getCopyrightYear()
-    {
-        return $this->container['copyright_year'];
-    }
-
-    /**
-     * Sets copyright_year
-     *
-     * @param int $copyright_year copyright_year
-     *
-     * @return $this
-     */
-    public function setCopyrightYear($copyright_year)
-    {
-        $this->container['copyright_year'] = $copyright_year;
-
-        return $this;
-    }
-
-    /**
-     * Gets encoding_format
+     * Gets address_country
      *
      * @return string
      */
-    public function getEncodingFormat()
+    public function getAddressCountry()
     {
-        return $this->container['encoding_format'];
+        return $this->container['address_country'];
     }
 
     /**
-     * Sets encoding_format
+     * Sets address_country
      *
-     * @param string $encoding_format encoding_format
+     * @param string $address_country address_country
      *
      * @return $this
      */
-    public function setEncodingFormat($encoding_format)
+    public function setAddressCountry($address_country)
     {
-        $this->container['encoding_format'] = $encoding_format;
+        $this->container['address_country'] = $address_country;
 
         return $this;
     }
 
     /**
-     * Gets is_accessible_for_free
-     *
-     * @return bool
-     */
-    public function getIsAccessibleForFree()
-    {
-        return $this->container['is_accessible_for_free'];
-    }
-
-    /**
-     * Sets is_accessible_for_free
-     *
-     * @param bool $is_accessible_for_free is_accessible_for_free
-     *
-     * @return $this
-     */
-    public function setIsAccessibleForFree($is_accessible_for_free)
-    {
-        $this->container['is_accessible_for_free'] = $is_accessible_for_free;
-
-        return $this;
-    }
-
-    /**
-     * Gets thumbnail_url
+     * Gets address_locality
      *
      * @return string
      */
-    public function getThumbnailUrl()
+    public function getAddressLocality()
     {
-        return $this->container['thumbnail_url'];
+        return $this->container['address_locality'];
     }
 
     /**
-     * Sets thumbnail_url
+     * Sets address_locality
      *
-     * @param string $thumbnail_url thumbnail_url
+     * @param string $address_locality address_locality
      *
      * @return $this
      */
-    public function setThumbnailUrl($thumbnail_url)
+    public function setAddressLocality($address_locality)
     {
-        $this->container['thumbnail_url'] = $thumbnail_url;
+        $this->container['address_locality'] = $address_locality;
 
         return $this;
     }
 
     /**
-     * Gets in_language
+     * Gets address_region
      *
      * @return string
      */
-    public function getInLanguage()
+    public function getAddressRegion()
     {
-        return $this->container['in_language'];
+        return $this->container['address_region'];
     }
 
     /**
-     * Sets in_language
+     * Sets address_region
      *
-     * @param string $in_language in_language
+     * @param string $address_region address_region
      *
      * @return $this
      */
-    public function setInLanguage($in_language)
+    public function setAddressRegion($address_region)
     {
-        $this->container['in_language'] = $in_language;
+        $this->container['address_region'] = $address_region;
 
         return $this;
     }
 
     /**
-     * Gets category
+     * Gets postal_code
+     *
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postal_code'];
+    }
+
+    /**
+     * Sets postal_code
+     *
+     * @param string $postal_code postal_code
+     *
+     * @return $this
+     */
+    public function setPostalCode($postal_code)
+    {
+        $this->container['postal_code'] = $postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets post_office_box_number
+     *
+     * @return string
+     */
+    public function getPostOfficeBoxNumber()
+    {
+        return $this->container['post_office_box_number'];
+    }
+
+    /**
+     * Sets post_office_box_number
+     *
+     * @param string $post_office_box_number post_office_box_number
+     *
+     * @return $this
+     */
+    public function setPostOfficeBoxNumber($post_office_box_number)
+    {
+        $this->container['post_office_box_number'] = $post_office_box_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets street_address
+     *
+     * @return string
+     */
+    public function getStreetAddress()
+    {
+        return $this->container['street_address'];
+    }
+
+    /**
+     * Sets street_address
+     *
+     * @param string $street_address street_address
+     *
+     * @return $this
+     */
+    public function setStreetAddress($street_address)
+    {
+        $this->container['street_address'] = $street_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets address_line
+     *
+     * @return string
+     */
+    public function getAddressLine()
+    {
+        return $this->container['address_line'];
+    }
+
+    /**
+     * Sets address_line
+     *
+     * @param string $address_line address_line
+     *
+     * @return $this
+     */
+    public function setAddressLine($address_line)
+    {
+        $this->container['address_line'] = $address_line;
+
+        return $this;
+    }
+
+    /**
+     * Gets available_language
      *
      * @return string[]
      */
-    public function getCategory()
+    public function getAvailableLanguage()
     {
-        return $this->container['category'];
+        return $this->container['available_language'];
     }
 
     /**
-     * Sets category
+     * Sets available_language
      *
-     * @param string[] $category category
+     * @param string[] $available_language available_language
      *
      * @return $this
      */
-    public function setCategory($category)
+    public function setAvailableLanguage($available_language)
     {
-        $this->container['category'] = $category;
+        $this->container['available_language'] = $available_language;
 
         return $this;
     }
 
     /**
-     * Gets tag
-     *
-     * @return string[]
-     */
-    public function getTag()
-    {
-        return $this->container['tag'];
-    }
-
-    /**
-     * Sets tag
-     *
-     * @param string[] $tag tag
-     *
-     * @return $this
-     */
-    public function setTag($tag)
-    {
-        $this->container['tag'] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * Gets contained_in_place
-     *
-     * @return string[]
-     */
-    public function getContainedInPlace()
-    {
-        return $this->container['contained_in_place'];
-    }
-
-    /**
-     * Sets contained_in_place
-     *
-     * @param string[] $contained_in_place contained_in_place
-     *
-     * @return $this
-     */
-    public function setContainedInPlace($contained_in_place)
-    {
-        $this->container['contained_in_place'] = $contained_in_place;
-
-        return $this;
-    }
-
-    /**
-     * Gets source_id
+     * Gets contact_type
      *
      * @return string
      */
-    public function getSourceId()
+    public function getContactType()
     {
-        return $this->container['source_id'];
+        return $this->container['contact_type'];
     }
 
     /**
-     * Sets source_id
+     * Sets contact_type
      *
-     * @param string $source_id source_id
+     * @param string $contact_type contact_type
      *
      * @return $this
      */
-    public function setSourceId($source_id)
+    public function setContactType($contact_type)
     {
-        $this->container['source_id'] = $source_id;
+        $this->container['contact_type'] = $contact_type;
 
         return $this;
     }
 
     /**
-     * Gets auto_translate
+     * Gets email
      *
-     * @return bool
+     * @return string
      */
-    public function getAutoTranslate()
+    public function getEmail()
     {
-        return $this->container['auto_translate'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets auto_translate
+     * Sets email
      *
-     * @param bool $auto_translate auto_translate
+     * @param string $email email
      *
      * @return $this
      */
-    public function setAutoTranslate($auto_translate)
+    public function setEmail($email)
     {
-        $this->container['auto_translate'] = $auto_translate;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets data_governance
+     * Gets fax_number
      *
-     * @return \InfocenterUpdate\Client\Model\DsDataGovernanceRequest
+     * @return string
      */
-    public function getDataGovernance()
+    public function getFaxNumber()
     {
-        return $this->container['data_governance'];
+        return $this->container['fax_number'];
     }
 
     /**
-     * Sets data_governance
+     * Sets fax_number
      *
-     * @param \InfocenterUpdate\Client\Model\DsDataGovernanceRequest $data_governance data_governance
+     * @param string $fax_number fax_number
      *
      * @return $this
      */
-    public function setDataGovernance($data_governance)
+    public function setFaxNumber($fax_number)
     {
-        $this->container['data_governance'] = $data_governance;
+        $this->container['fax_number'] = $fax_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->container['telephone'];
+    }
+
+    /**
+     * Sets telephone
+     *
+     * @param string $telephone telephone
+     *
+     * @return $this
+     */
+    public function setTelephone($telephone)
+    {
+        $this->container['telephone'] = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Gets hours_available
+     *
+     * @return \InfocenterUpdate\Client\Model\DsOpeningHoursSpecificationRequest[]
+     */
+    public function getHoursAvailable()
+    {
+        return $this->container['hours_available'];
+    }
+
+    /**
+     * Sets hours_available
+     *
+     * @param \InfocenterUpdate\Client\Model\DsOpeningHoursSpecificationRequest[] $hours_available hours_available
+     *
+     * @return $this
+     */
+    public function setHoursAvailable($hours_available)
+    {
+        $this->container['hours_available'] = $hours_available;
 
         return $this;
     }
