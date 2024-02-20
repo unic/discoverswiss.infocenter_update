@@ -16,16 +16,15 @@
         }
     ],
     "require": {
-        "php": ">=5.5",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^7.8"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
-        "squizlabs/php_codesniffer": "~2.6",
-        "friendsofphp/php-cs-fixer": "~1.12"
+        "squizlabs/php_codesniffer": "^2.9",
+        "friendsofphp/php-cs-fixer": "^3.9"
     },
     "autoload": {
         "psr-4": { "InfocenterUpdate\\Client\\" : "lib/" }
