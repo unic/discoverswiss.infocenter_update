@@ -4,7 +4,6 @@ All URIs are relative to *https://api.discover.swiss/test/info-update/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**1b7aff24c6fa49758878263dd6723d16**](DefaultApi.md#1b7aff24c6fa49758878263dd6723d16) | **GET** /openapi/{version}.{extension} | openapi
 [**deleteAccommodation**](DefaultApi.md#deleteaccommodation) | **DELETE** /accommodations/{project}/{sourceId} | DeleteAccommodation
 [**deleteCreativeWork**](DefaultApi.md#deletecreativework) | **DELETE** /creativeWorks/{project}/{sourceId} | DeleteCreativeWork
 [**deleteFoodEstablishment**](DefaultApi.md#deletefoodestablishment) | **DELETE** /foodEstablishments/{project}/{sourceId} | DeleteFoodEstablishment
@@ -34,62 +33,6 @@ Method | HTTP request | Description
 [**upsertProduct**](DefaultApi.md#upsertproduct) | **POST** /products/{project} | UpsertProduct
 [**upsertTour**](DefaultApi.md#upserttour) | **POST** /tours/{project} | UpsertTour
 [**upsertWebcam**](DefaultApi.md#upsertwebcam) | **POST** /webcams/{project} | UpsertWebcam
-
-# **1b7aff24c6fa49758878263dd6723d16**
-> 1b7aff24c6fa49758878263dd6723d16($version, $extension)
-
-openapi
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: apiKeyHeader
-$config = InfocenterUpdate\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = InfocenterUpdate\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');// Configure API key authorization: apiKeyQuery
-$config = InfocenterUpdate\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = InfocenterUpdate\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-$apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$version = "version_example"; // string | OpenAPI version
-$extension = "extension_example"; // string | OpenAPI document extension
-
-try {
-    $apiInstance->1b7aff24c6fa49758878263dd6723d16($version, $extension);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->1b7aff24c6fa49758878263dd6723d16: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **version** | **string**| OpenAPI version |
- **extension** | **string**| OpenAPI document extension |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[apiKeyHeader](../../README.md#apiKeyHeader), [apiKeyQuery](../../README.md#apiKeyQuery)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAccommodation**
 > \InfocenterUpdate\Client\Model\DsUpdateResponse deleteAccommodation($project, $source_id, $ocp_apim_subscription_key)

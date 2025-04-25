@@ -71,30 +71,6 @@ $apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
     new GuzzleHttp\Client(),
     $config
 );
-$version = "version_example"; // string | OpenAPI version
-$extension = "extension_example"; // string | OpenAPI document extension
-
-try {
-    $apiInstance->1b7aff24c6fa49758878263dd6723d16($version, $extension);
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->1b7aff24c6fa49758878263dd6723d16: ', $e->getMessage(), PHP_EOL;
-}
-
-// Configure API key authorization: apiKeyHeader
-$config = InfocenterUpdate\Client\Configuration::getDefaultConfiguration()->setApiKey('Ocp-Apim-Subscription-Key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = InfocenterUpdate\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Ocp-Apim-Subscription-Key', 'Bearer');
-// Configure API key authorization: apiKeyQuery
-$config = InfocenterUpdate\Client\Configuration::getDefaultConfiguration()->setApiKey('subscription-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = InfocenterUpdate\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('subscription-key', 'Bearer');
-
-$apiInstance = new InfocenterUpdate\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
 $project = "project_example"; // string | Use this property to specify project
 $source_id = "source_id_example"; // string | Accommodation identifier
 $ocp_apim_subscription_key = "ocp_apim_subscription_key_example"; // string | Subscription key to access the API. Get it on (Developer portal)[https://developer.discover.swiss].
@@ -829,7 +805,6 @@ All URIs are relative to *https://api.discover.swiss/test/info-update/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**1b7aff24c6fa49758878263dd6723d16**](docs/Api/DefaultApi.md#1b7aff24c6fa49758878263dd6723d16) | **GET** /openapi/{version}.{extension} | openapi
 *DefaultApi* | [**deleteAccommodation**](docs/Api/DefaultApi.md#deleteaccommodation) | **DELETE** /accommodations/{project}/{sourceId} | DeleteAccommodation
 *DefaultApi* | [**deleteCreativeWork**](docs/Api/DefaultApi.md#deletecreativework) | **DELETE** /creativeWorks/{project}/{sourceId} | DeleteCreativeWork
 *DefaultApi* | [**deleteFoodEstablishment**](docs/Api/DefaultApi.md#deletefoodestablishment) | **DELETE** /foodEstablishments/{project}/{sourceId} | DeleteFoodEstablishment
